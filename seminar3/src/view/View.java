@@ -1,9 +1,13 @@
 package view;
 
-import controller.Controller;
+
+import Controller.Controller;
+
 
 public class View {
     private Controller contr;
+
+
 
     public View(Controller contr) {
         this.contr = contr;
@@ -11,6 +15,9 @@ public class View {
 
     public void sampleExecution() {
         contr.startSale();
+       // contr.item();
+
+
     }
 }
 
