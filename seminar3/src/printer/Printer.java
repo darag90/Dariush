@@ -1,7 +1,6 @@
-package Printer;
+package printer;
 
-import Item.Item;
-import Reciept.Reciept;
+import reciept.Reciept;
 
 public class Printer {
 
