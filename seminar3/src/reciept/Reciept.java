@@ -13,9 +13,9 @@ public class Reciept {
 
    public Reciept(int itemCost, ItemList list){
         cost = itemCost;
-        int len = list.getList().size;
+        int len = list.getList().size();
         for (int i = 0; i <= len; i++)
-            sb.append(list.getList().get(i));
+            sb.append(list.getList().get(i).getItemId());
     }
 
     public String getSBToString(){

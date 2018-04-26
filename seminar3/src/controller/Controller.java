@@ -17,7 +17,7 @@ public class Controller {
 
 
     public Controller(ExternalSystem externalSystem /*, PaymentController paymentController*/) {
-      //  this.paymentController = paymentController;
+     //   this.paymentController = paymentController;
         this.externalSystem = externalSystem;
     }
 
@@ -25,10 +25,10 @@ public class Controller {
     }
 
 
-  /*  public int getCost(int itemCost){
-        int cost = externalSystem.getCost(itemCost);
+    public int getCost(int itemCost){
+        int cost = getCost(itemCost);
         return cost;
-    } */
+    }
 
 
 
