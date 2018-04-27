@@ -1,10 +1,9 @@
-package itemList;
+package model;
 
 import item.Item;
 
 import java.util.ArrayList;
 import java.util.List;
-import controller.Controller;
 import java.lang.StringBuilder;
 
 
