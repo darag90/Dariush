@@ -5,6 +5,7 @@ package controller;
 import dbhandler.ExternalSystem;
 import model.PaymentController;
 import DTO.SaleInfoDto;
+import model.Sale;
 
 
 public class Controller {
@@ -20,6 +21,7 @@ public class Controller {
 
     public void startSale()
     {
+        Sale sale = new Sale();
     }
 
     public SaleInfoDto enterItemId(int id)
