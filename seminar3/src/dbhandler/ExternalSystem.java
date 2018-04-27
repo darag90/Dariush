@@ -9,12 +9,13 @@ public class ExternalSystem {
   //  private CustomerRegister customerRegister = new CustomerRegister();
 
 
-    public ExternalSystem(Printer printer){
+    public ExternalSystem(Printer printer)
+    {
         this.printer = printer;
     }
 
-  /*  public CustomerRegister getCustomerRegister(){
-        return customerRegister;
+ /*   public CustomerRegister getCustomerRegister(){
+        return CustomerRegister;
     } */
 
 

@@ -1,4 +1,4 @@
-package controller;
+/* package controller;
 
 import dbhandler.ExternalSystem;
 import model.PaymentController;
@@ -18,6 +18,5 @@ public class ControllerTest {
     }
 
 
-
-
 }
+*/

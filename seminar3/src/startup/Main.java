@@ -16,7 +16,7 @@ public class Main
        /* Printer printer = new Printer();
         PaymentController paymentController = new PaymentController(printer);
         ExternalSystem externalSystem = new ExternalSystem(printer);
-        Controller contr = new Controller(externalSystem);
+        Controller contr = new Controller(externalSystem, paymentController);
         View view = new View(contr);
         view.sampleExecution();*/
     }
