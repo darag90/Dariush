@@ -4,14 +4,13 @@ package controller;
 
 import dbhandler.ExternalSystem;
 import model.PaymentController;
+import DTO.SaleInfoDto;
 
 
 public class Controller {
+
     private PaymentController paymentController;
     private ExternalSystem externalSystem;
-
-
-
 
 
     public Controller(ExternalSystem externalSystem, PaymentController paymentController) {
@@ -19,11 +18,27 @@ public class Controller {
         this.externalSystem = externalSystem;
     }
 
-    public void startSale() {
+    public void startSale()
+    {
+    }
+
+    public SaleInfoDto enterItemId(int id)
+    {
+        SaleInfoDto saleInfoDto = new SaleInfoDto();
+        return saleInfoDto;
+    }
+
+    public void endSale()
+    {
+    }
+
+    public void requestDscount()
+    {
     }
 
 
- /*   public int getCost(int itemCost){
+
+    /*   public int getCost(int itemCost){
         int cost = getCost(itemCost);
         return cost;
     } */
