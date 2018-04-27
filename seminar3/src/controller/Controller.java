@@ -5,7 +5,7 @@ package controller;
 import dbhandler.ExternalSystem;
 import model.Item;
 import model.PaymentController;
-import DTO.SaleInfoDto;
+import dto.SaleInfoDto;
 import model.Sale;
 
 
