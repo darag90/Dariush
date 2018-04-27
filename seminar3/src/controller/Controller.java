@@ -23,13 +23,13 @@ public class Controller {
     }
 
 
- /*   public int getCost(int itemCost){
+  /*  public int getCost(int itemCost){
         int cost = getCost(itemCost);
         return cost;
     } */
 
-    public void cashPayment(int cashAmount){
-        //cashPayment change = new model.PaymentController();
+    public int cashPayment(int cashAmount){
+     //   int change = paymentController.cashPayment(cashAmount);
 
 
 
