@@ -1,8 +1,8 @@
 package controller;
 
-import externalSystem.ExternalSystem;
-import paymentController.PaymentController;
-import printer.Printer;
+import dbhandler.ExternalSystem;
+import model.PaymentController;
+import model.Printer;
 
 
 public class ControllerTest {
@@ -14,7 +14,7 @@ public class ControllerTest {
 
     public void testCashPayment(){
         int expResult = 198;
-        int result = controller
+        //controller result = controller;
     }
 
 

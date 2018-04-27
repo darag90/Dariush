@@ -2,8 +2,8 @@ package view;
 
 
 import controller.Controller;
-import item.Item;
-import paymentController.PaymentController;
+import model.Item;
+import model.PaymentController;
 import java.lang.StringBuilder;
 
 
@@ -22,8 +22,8 @@ public class View {
 
 
         // skriver ut godkännandet för betalning för change
-        boolean change = contr.cashPayment();
-        System.out.println("authirization was" + change);
+        //boolean change = contr.cashPayment();
+        //System.out.println("authirization was" + change);
 
 
     }

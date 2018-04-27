@@ -28,9 +28,9 @@ public class Controller {
         return cost;
     } */
 
-    public int cashPayment(int cashAmount){
-        int change = paymentController.cashPayment(cashAmount);
-        return change;
+    public void cashPayment(int cashAmount){
+        //cashPayment change = new model.PaymentController();
+
     }
 
 

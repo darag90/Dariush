@@ -1,5 +1,9 @@
 package model;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Item {
     private String itemId;
     private String itemQuantity;
@@ -84,7 +88,7 @@ public class Item {
 
         public void itemDTO(Item item){
             list.add(item);
-            cost += item.getCost();
+            cost += item.getItemCost();
         }
 
         /**

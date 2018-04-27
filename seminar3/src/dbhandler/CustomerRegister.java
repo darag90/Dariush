@@ -1,9 +1,9 @@
 package dbhandler;
 
-import discountRules.DiscountRules;
-import externalSystem.ExternalSystem;
+import dbhandler.DiscountRules;
+import dbhandler.ExternalSystem;
 import model.ItemList;
-import printer.Printer;
+import model.Printer;
 
 import controller.Controller;
 
@@ -31,7 +31,7 @@ public class CustomerRegister {
 
         if(customerID == index){
             printResults();
-            return null;
+            //return null;
         }
     }
 
@@ -40,7 +40,7 @@ public class CustomerRegister {
      */
 
     private void printResults(){
-        printer.printReciept();
+        //printer.printReciept();
 
     }
 
