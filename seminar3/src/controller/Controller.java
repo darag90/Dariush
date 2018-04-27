@@ -14,8 +14,8 @@ public class Controller {
 
 
 
-    public Controller(ExternalSystem externalSystem /*, PaymentController paymentController*/) {
-     //   this.paymentController = paymentController;
+    public Controller(ExternalSystem externalSystem, PaymentController paymentController) {
+        this.paymentController = paymentController;
         this.externalSystem = externalSystem;
     }
 
@@ -30,6 +30,9 @@ public class Controller {
 
     public void cashPayment(int cashAmount){
         //cashPayment change = new model.PaymentController();
+
+
+
 
     }
 

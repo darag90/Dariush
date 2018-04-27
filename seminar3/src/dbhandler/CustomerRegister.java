@@ -4,6 +4,7 @@ import dbhandler.DiscountRules;
 import dbhandler.ExternalSystem;
 import model.ItemList;
 import model.Printer;
+import model.PaymentController;
 
 import controller.Controller;
 
@@ -13,7 +14,8 @@ public class CustomerRegister {
     private DiscountRules discountRules = new DiscountRules();
     private ItemList itemList = new ItemList();
     private ExternalSystem externalSystem = new ExternalSystem(printer);
-    private Controller controller = new Controller(externalSystem);
+    private PaymentController paymentController = new PaymentController(printer);
+    private Controller controller = new Controller(externalSystem, paymentController);
 
     /**
      * skapar rabbat för kunden
