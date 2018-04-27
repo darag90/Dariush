@@ -12,6 +12,7 @@ public class Controller {
 
     private PaymentController paymentController;
     private ExternalSystem externalSystem;
+    private Sale sale;
 
 
     public Controller(ExternalSystem externalSystem, PaymentController paymentController) {
@@ -21,7 +22,7 @@ public class Controller {
 
     public void startSale()
     {
-        Sale sale = new Sale();
+        this.sale = new Sale();
     }
 
     public SaleInfoDto enterItemId(int id)
