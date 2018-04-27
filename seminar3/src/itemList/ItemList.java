@@ -31,10 +31,10 @@ public class ItemList {
      * lagrar item i en lista och uppdaterar kostnaden för hela lista
      */
 
-    public void itemDTO(Item item){
+  /*  public void itemDTO(Item item){
         list.add(item);
         cost += item.getCost();
-    }
+    } */
 
     /**
      * tar en lista av valda item och returnerar en sträng som en lista
@@ -49,7 +49,8 @@ public class ItemList {
             if (list.getList().get(i).equals(list)) {               // osäker
                 sb.append("Result: available itemId" + " ");
                 sb.append("\n");
-            } else {
+            }
+            else {
                 sb.append("Result: itemId not available" + " ");
                 sb.append("\n");
             }

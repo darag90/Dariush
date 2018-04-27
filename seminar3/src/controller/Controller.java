@@ -11,7 +11,7 @@ import paymentController.PaymentController;
 public class Controller {
     private PaymentController paymentController;
     private ExternalSystem externalSystem;
-    private
+
 
 
 
@@ -25,10 +25,17 @@ public class Controller {
     }
 
 
-    public int getCost(int itemCost){
+ /*   public int getCost(int itemCost){
         int cost = getCost(itemCost);
         return cost;
+    } */
+
+    public int cashPayment(int cashAmount){
+        int change = paymentController.cashPayment(cashAmount);
+        return change;
     }
+
+
 
 
 
