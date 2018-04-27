@@ -3,9 +3,11 @@ package dbhandler;
 
 
 import model.Printer;
+import model.Item;
 
 public class ExternalSystem {
     private Printer printer = new Printer();
+    private int item;
   //  private CustomerRegister customerRegister = new CustomerRegister();
 
 
@@ -17,6 +19,22 @@ public class ExternalSystem {
  /*   public CustomerRegister getCustomerRegister(){
         return CustomerRegister;
     } */
+
+    public Item getItem(int id){
+
+
+
+        //@todo borde kanse fixa en fakad databas??
+        int a = 3;
+        int v = 4;
+        return new Item();
+
+    }
+
+
+
+
+
 
 
 

@@ -2,27 +2,37 @@ package model;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Item {
     private String itemId;
     private String itemQuantity;
     private int itemCost;
+    private int id;
     private boolean result = false;
 
 
-    public Item(int itemCost, String itemId, String itemQuantity){
-        this.itemCost = itemCost;
+ /*   public Item(int itemCost, String itemId, String itemQuantity){
+        this.itemCost = new Date();
         this.itemId = itemId;
         this.itemQuantity = itemQuantity;
-    }
+    } */
 
     /**
      * ställer in resultatet om det finns flera item av samma Id
      */
-    public void QuantityItem(boolean result){
-         this.result = result;
+
+
+    public void Item (int id, int itemCost){
+        this.itemCost = itemCost;
+        this.id = id;
     }
+
+    public void QuantityItem(boolean result){
+        this.result = result;
+    }
+
 
     public String getItemId(){
         return itemId;
