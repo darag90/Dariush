@@ -2,6 +2,9 @@ package view;
 
 
 import controller.Controller;
+import item.Item;
+import paymentController.PaymentController;
+import java.lang.StringBuilder;
 
 
 public class View {
@@ -16,6 +19,11 @@ public class View {
     public void sampleExecution() {
         contr.startSale();
        // contr.item();
+
+
+        // skriver ut godkännandet för betalning för change
+        boolean change = contr.cashPayment();
+        System.out.println("authirization was" + change);
 
 
     }
