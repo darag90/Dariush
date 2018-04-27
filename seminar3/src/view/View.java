@@ -2,10 +2,7 @@ package view;
 
 
 import controller.Controller;
-import model.Item;
-import model.PaymentController;
-import java.lang.StringBuilder;
-import DTO.SaleInfoDto;
+import dto.SaleInfoDto;
 
 
 public class View {
