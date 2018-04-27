@@ -1,10 +1,8 @@
 
-package externalSystem;
+package dbhandler;
 
 
-import customerRegister.CustomerRegister;
-import printer.Printer;
-import item.Item;
+import model.Printer;
 
 public class ExternalSystem {
     private Printer printer = new Printer();

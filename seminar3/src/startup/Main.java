@@ -2,9 +2,9 @@ package startup;
 
 
 import controller.Controller;
-import externalSystem.ExternalSystem;
-import paymentController.PaymentController;
-import printer.Printer;
+import dbhandler.ExternalSystem;
+import model.PaymentController;
+import model.Printer;
 import view.View;
 
 

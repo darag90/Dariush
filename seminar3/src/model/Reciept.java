@@ -1,6 +1,4 @@
-package reciept;
-
-import itemList.ItemList;
+package model;
 
 import java.lang.StringBuilder;
 
@@ -11,7 +9,7 @@ public class Reciept {
     private int cost;
 
 
-   public Reciept(int itemCost, ItemList list){
+   public Reciept(int itemCost, Item.ItemList list){
         cost = itemCost;
         int len = list.getList().size();
         for (int i = 0; i <= len; i++)

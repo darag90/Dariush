@@ -1,8 +1,4 @@
-package paymentController;
-
-import itemList.ItemList;
-import printer.Printer;
-import reciept.Reciept;
+package model;
 
 public class PaymentController {
     private Printer printer;
@@ -12,7 +8,7 @@ public class PaymentController {
 
     }
 
-    public int cashPayment(int cashAmount, int itemCost, ItemList list){
+    public int cashPayment(int cashAmount, int itemCost, Item.ItemList list){
         Reciept reciept = new Reciept(itemCost, list);
         printer.printReciept(reciept);
 

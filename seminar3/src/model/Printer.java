@@ -1,6 +1,6 @@
-package printer;
+package model;
 
-import reciept.Reciept;
+import model.Reciept;
 
 public class Printer {
 

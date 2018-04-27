@@ -2,16 +2,14 @@
 package controller;
 
 
-import item.Item;
-import itemList.ItemList;
-import externalSystem.ExternalSystem;
-import paymentController.PaymentController;
+import dbhandler.ExternalSystem;
+import model.PaymentController;
 
 
 public class Controller {
     private PaymentController paymentController;
     private ExternalSystem externalSystem;
-    private
+
 
 
 
