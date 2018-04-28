@@ -5,7 +5,7 @@ package controller;
 import dbhandler.ExternalSystem;
 import model.Item;
 import model.PaymentController;
-import dto.SaleInfoDto;
+import DTO.SaleInfoDto;
 import model.Sale;
 
 
@@ -29,7 +29,7 @@ public class Controller {
     public SaleInfoDto enterItemId(int id)
     {
         Item item = externalSystem.getItem(id);
-        // sale.addItem(item);
+        sale.addItem(item);
         SaleInfoDto saleInfoDto = new SaleInfoDto();
 
         return saleInfoDto;
@@ -44,18 +44,21 @@ public class Controller {
     }
 
 
+ /*   public Payment enterPayment(int cashAmount){
 
 
-
+    }
 
     /*   public int getCost(int itemCost){
         int cost = getCost(itemCost);
         return cost;
     } */
 
-    public void cashPayment(int cashAmount){
-        //cashPayment change = new model.PaymentController();
 
+    public int cashPayment(int cashAmount){
+
+    //    int change = paymentController.cashPayment(cashAmount);     // måste fixa cashAmount, klagar på int
+    //    return change;
 
 
 

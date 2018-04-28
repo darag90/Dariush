@@ -1,7 +1,12 @@
 package model;
 
+// import controller.Controller;
+
+
+
 public class PaymentController {
     private Printer printer;
+
 
     public PaymentController(Printer printer){
         this.printer = printer;

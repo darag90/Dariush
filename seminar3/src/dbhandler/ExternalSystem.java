@@ -7,7 +7,7 @@ import model.Item;
 
 public class ExternalSystem {
     private Printer printer = new Printer();
-    private int item;
+    private int Item;
   //  private CustomerRegister customerRegister = new CustomerRegister();
 
 
@@ -21,7 +21,6 @@ public class ExternalSystem {
     } */
 
     public Item getItem(int id){
-
 
 
         //@todo borde kanse fixa en fakad databas??
