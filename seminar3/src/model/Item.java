@@ -2,19 +2,20 @@ package model;
 
 
 import java.util.ArrayList;
-import java.util.Date;
+
 import java.util.List;
 
 public class Item {
-    private String itemId;
-    private String itemQuantity;
+    private int itemId;
+    private int itemQuantity;
     private int itemCost;
+  //  private int itemList;
     private int id;
     private boolean result = false;
 
 
- /*   public Item(int itemCost, String itemId, String itemQuantity){
-        this.itemCost = new Date();
+  /*  public Item(int itemCost, String itemId, String itemQuantity){
+        this.itemCost = itemCost;
         this.itemId = itemId;
         this.itemQuantity = itemQuantity;
     } */
@@ -24,7 +25,8 @@ public class Item {
      */
 
 
-    public void Item (int id, int itemCost){
+    public void Item(int id, int itemCost /* int itemList */){
+     //   this.itemList = itemList;
         this.itemCost = itemCost;
         this.id = id;
     }
@@ -33,12 +35,17 @@ public class Item {
         this.result = result;
     }
 
+    // test
+  /*  public int getItemList(){
+        return  itemList;
+    } */
 
-    public String getItemId(){
+
+    public int getItemId(){
         return itemId;
     }
 
-    public String getItemQuantity(){
+    public int getItemQuantity(){
         return itemQuantity;
     }
 
@@ -69,6 +76,11 @@ public class Item {
         if (!(this.itemQuantity == item.getItemQuantity())){
             return false;
         }
+
+        // test
+       /* if (!(this.itemList == item.getItemList())){
+
+        } */
 
         return true;
     }

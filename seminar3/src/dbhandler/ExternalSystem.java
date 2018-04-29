@@ -2,8 +2,10 @@
 package dbhandler;
 
 
+import model.ItemList;
 import model.Printer;
 import model.Item;
+
 
 public class ExternalSystem {
     private Printer printer = new Printer();
@@ -30,6 +32,8 @@ public class ExternalSystem {
 
     }
 
+ /*    public int getItemCost(int cost){
+    } */
 
 
 
@@ -38,8 +42,9 @@ public class ExternalSystem {
 
 
 
-  /*  public boolean InformationSystem(int itemCost, String itemList){
-        return true;
+
+ /*   public Authorization InformationSystem(int itemCost, String itemList){
+        return
     } */
 
 
