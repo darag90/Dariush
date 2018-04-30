@@ -13,7 +13,7 @@ public class PaymentController {
 
     }
 
-    public int cashPayment(int cashAmount, int itemCost, Item.ItemList list){
+    public int cashPayment(int cashAmount, int itemCost, ItemList list){
         Reciept reciept = new Reciept(itemCost, list);
         printer.printReciept(reciept);
 
