@@ -21,11 +21,11 @@ public class Controller {
 
 
 
-    public Controller(ExternalSystem externalSystem, PaymentController paymentController, Item item, ItemList itemList) {
+    public Controller(ExternalSystem externalSystem, PaymentController paymentController) {
         this.paymentController = paymentController;
         this.externalSystem = externalSystem;
-        this.itemList = itemList;
-        this.item = item;
+        //this.itemList = itemList;
+        //this.item = item;
 
     }
 
@@ -63,13 +63,13 @@ public class Controller {
     } */
 
 
- /*   public int cashPayment(int cashAmount)
+    public int cashPayment(int cashAmount)
     {
-        ItemList list =
+        //ItemList list =
         int cost = item.getItemCost();
-        int change = paymentController.cashPayment(cashAmount, cost);     // måste fixa cashAmount, klagar på int
+        int change = 1;//paymentController.cashPayment(cashAmount, cost,);     // måste fixa cashAmount, klagar på int
         return change;
-    } */
+    }
 
 
 

@@ -14,11 +14,11 @@ public class PaymentController {
     }
 
     public int cashPayment(int cashAmount, int itemCost, ItemList list){
-        Reciept reciept = new Reciept(itemCost, list);
-        printer.printReciept(reciept);
+        //Reciept reciept = new Reciept(itemCost, list);
+        //printer.printReciept(reciept);
 
         int change = cashAmount - itemCost;
-        System.out.println("Change" + change);
+        //System.out.println("Change" + change);//(debugg?)
         return change;
     }
 

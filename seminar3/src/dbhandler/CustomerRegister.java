@@ -15,7 +15,7 @@ public class CustomerRegister {
     private ItemList itemList = new ItemList();
     private ExternalSystem externalSystem = new ExternalSystem(printer);
     private PaymentController paymentController = new PaymentController(printer);
-    private Controller controller = new Controller(externalSystem, paymentController);
+    //private Controller controller = new Controller(externalSystem, paymentController);
 
     /**
      * skapar rabbat för kunden
