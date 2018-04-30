@@ -15,9 +15,9 @@ public class Controller {
 
     private PaymentController paymentController;
     private ExternalSystem externalSystem;
-    private Sale sale;
-    private Item item;
-    private ItemList itemList;
+    //private Sale sale;
+    //private Item item;
+    //private ItemList itemList;
 
 
 
