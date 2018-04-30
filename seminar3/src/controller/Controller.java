@@ -66,7 +66,7 @@ public class Controller {
     public int cashPayment(int cashAmount)
     {
         //ItemList list =
-        int cost = item.getItemCost();
+        //int cost = item.getItemCost();
         int change = 1;//paymentController.cashPayment(cashAmount, cost,);     // måste fixa cashAmount, klagar på int
         return change;
     }
