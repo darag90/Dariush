@@ -2,7 +2,7 @@ package view;
 
 
 import controller.Controller;
-import dto.SaleInfoDto;
+import DTO.SaleInfoDto;
 
 
 public class View {
@@ -37,6 +37,8 @@ public class View {
 
         //slå in det betalda beloppet
         contr.cashPayment(cashPayed);
+
+
 
     }
 }

@@ -2,10 +2,14 @@
 package dbhandler;
 
 
+import model.ItemList;
 import model.Printer;
+import model.Item;
+
 
 public class ExternalSystem {
     private Printer printer = new Printer();
+    private int Item;
   //  private CustomerRegister customerRegister = new CustomerRegister();
 
 
@@ -18,11 +22,29 @@ public class ExternalSystem {
         return CustomerRegister;
     } */
 
+    public Item getItem(int id){
+
+
+        //@todo borde kanse fixa en fakad databas??
+        int a = 3;
+        int v = 4;
+        return new Item();
+
+    }
+
+ /*    public int getItemCost(int cost){
+    } */
 
 
 
-  /*  public boolean InformationSystem(int itemCost, String itemList){
-        return true;
+
+
+
+
+
+
+ /*   public Authorization InformationSystem(int itemCost, String itemList){
+        return
     } */
 
 

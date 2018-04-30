@@ -26,13 +26,14 @@ public class ItemList {
         return cost;
     }
 
+
     /**
      * lagrar item i en lista och uppdaterar kostnaden för hela lista
      */
 
   /*  public void itemDTO(Item item){
         list.add(item);
-        cost += item.getCost();
+        cost += item.getItemCost();
     } */
 
     /**

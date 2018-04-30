@@ -1,6 +1,6 @@
 package model;
 
-import dto.SaleInfoDto;
+import DTO.SaleInfoDto;
 
 import java.util.Date;
 import java.util.LinkedList;
@@ -24,5 +24,10 @@ public class Sale
     {
         this.listOfItems.add(item);
     }
+
+  /*  public SaleInfo uppdateCost(int itemCost, int totalCost){
+
+        return new
+    } */
 
 }
