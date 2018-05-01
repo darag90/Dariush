@@ -13,8 +13,9 @@ public class CustomerRegister {
     private Printer printer = new Printer();
     private DiscountRules discountRules = new DiscountRules();
     private ItemList itemList = new ItemList();
-    private Item item = new Item();
-
+    private ExternalSystem externalSystem = new ExternalSystem(printer);
+    private PaymentController paymentController = new PaymentController(printer);
+    //private Controller controller = new Controller(externalSystem, paymentController);
 
     /**
      * skapar rabbat för kunden
@@ -42,7 +43,7 @@ public class CustomerRegister {
      */
 
     private void printResults(){
-        //printer.printReciept();
+       // printer.printReciept();
 
     }
 
@@ -53,7 +54,7 @@ public class CustomerRegister {
  /*   public boolean CustomerID(int discount, int precent){
         int entityForDiscount = DiscountRules.
 
-    }
+    }  */
 
 
 
