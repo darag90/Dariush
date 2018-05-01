@@ -8,6 +8,9 @@ import model.PaymentController;
 
 import controller.Controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class CustomerRegister {
     private Printer printer = new Printer();
@@ -16,6 +19,7 @@ public class CustomerRegister {
     private ExternalSystem externalSystem = new ExternalSystem(printer);
     private PaymentController paymentController = new PaymentController(printer);
     //private Controller controller = new Controller(externalSystem, paymentController);
+
 
     /**
      * skapar rabbat för kunden
@@ -32,18 +36,49 @@ public class CustomerRegister {
         itemList.getList().get(index - 1).equals(result);
 
         if(customerID == index){
-            printResults();
+            printResults();                                     // kanske inte behövs
             return null;
         }
         return new CustomerRegister();
     }
 
     /**
-     * skickar en lista över kund id
+     * en lista över ett antal customer som är registerad som medlem i store
      */
+
+    public void setCustomerList()
+    {
+        ArrayList<Integer> customerList = new ArrayList<>(5);
+        customerList.add(1);
+        customerList.add(2);
+        customerList.add(3);
+        customerList.add(4);
+        customerList.add(5);
+
+        System.out.println(customerList);
+    }
+
+ /*   public CustomerRegister()
+    {
+       // boolean customerList = (5 <= 1);
+      //  int customerList = 5;
+        boolean customerList = (5 <= 1);
+        boolean availableCustomerId = customerList.
+
+
+    } */
+
+
+
+
+
+
+
+
 
     private void printResults(){
        // printer.printReciept();
+      //  CustomerRegister customerRegister = new {CustomerRegister (Anders)};
 
     }
 
