@@ -2,33 +2,30 @@ package model;
 
 
 import java.util.ArrayList;
-
 import java.util.List;
 
 public class Item {
-    private int itemId;
+    /*bör inte denna klass represnetera en vara då den heter item?*/
+    private int idNumber;//streckkod
+    private String itemName;//namn
     private int itemQuantity;
     private int itemCost;
-  //  private int itemList;
-    private int id;
-    private boolean result = false;
+
+    private boolean result = false; // vad är syftet med denna?(Simon undrar) @todo tabort?
 
 
   /*  public Item(int itemCost, String itemId, String itemQuantity){
         this.itemCost = itemCost;
         this.itemId = itemId;
         this.itemQuantity = itemQuantity;
-    } */
+    } @todo ta bort?*/
 
-    /**
-     * ställer in resultatet om det finns flera item av samma Id
-     */
 
 
     public void Item(int id, int itemCost /* int itemList */){
      //   this.itemList = itemList;
         this.itemCost = itemCost;
-        this.id = id;
+        this.idNumber = id;
     }
 
     public void QuantityItem(boolean result){
@@ -38,11 +35,11 @@ public class Item {
     // test
   /*  public int getItemList(){
         return  itemList;
-    } */
+    } @todo ta bort?*/
 
 
     public int getItemId(){
-        return itemId;
+        return idNumber;
     }
 
     public int getItemQuantity(){
@@ -69,7 +66,7 @@ public class Item {
             return false;
         }
 
-        if(!(this.itemId == item.getItemId())){
+        if(!(this.idNumber == item.getItemId())){
             return false;
         }
 
@@ -77,14 +74,10 @@ public class Item {
             return false;
         }
 
-        // test
-       /* if (!(this.itemList == item.getItemList())){
-
-        } */
-
         return true;
     }
 
+    /*@todo borde kanske flyttas till sale*/
     public static class ItemList {
         private int cost = 0;
         private List<Item> list = new ArrayList<>();
@@ -108,7 +101,7 @@ public class Item {
          * lagrar item i en lista och uppdaterar kostnaden för hela lista
          */
 
-        public void itemDTO(Item item){
+        public void itemDTO(Item item){//@todo ta bort?
             list.add(item);
             cost += item.getItemCost();
         }
@@ -117,7 +110,7 @@ public class Item {
          * tar en lista av valda item och returnerar en sträng som en lista
          */
 
-        public String resultOfItemList (ItemList list) {
+        public String resultOfItemList (ItemList list) { //@todo tabort?
             StringBuilder sb = new StringBuilder();
             int len = list.getList().size();
             for (int i = 0; i < len; i++) {

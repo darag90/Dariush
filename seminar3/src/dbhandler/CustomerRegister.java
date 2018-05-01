@@ -2,7 +2,6 @@ package dbhandler;
 
 import dbhandler.DiscountRules;
 import dbhandler.ExternalSystem;
-import model.Item;
 import model.ItemList;
 import model.Printer;
 import model.PaymentController;
@@ -12,7 +11,7 @@ import controller.Controller;
 
 public class CustomerRegister {
     private Printer printer = new Printer();
-  //  private DiscountRules discountRules = new DiscountRules();
+    private DiscountRules discountRules = new DiscountRules();
     private ItemList itemList = new ItemList();
     private Item item = new Item();
 
@@ -43,7 +42,7 @@ public class CustomerRegister {
      */
 
     private void printResults(){
-      //   printer.printReciept();
+        //printer.printReciept();
 
     }
 
@@ -54,10 +53,7 @@ public class CustomerRegister {
  /*   public boolean CustomerID(int discount, int precent){
         int entityForDiscount = DiscountRules.
 
-    } */
-
-
-
+    }
 
 
 

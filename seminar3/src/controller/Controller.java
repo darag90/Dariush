@@ -20,8 +20,7 @@ public class Controller {
 
 
 
-
-    public Controller(ExternalSystem externalSystem, PaymentController paymentController) {
+    public Controller(ExternalSystem externalSystem, PaymentController paymentController, Item item, ItemList itemList) {
         this.paymentController = paymentController;
         this.externalSystem = externalSystem;
 
