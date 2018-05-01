@@ -22,6 +22,7 @@ public class View {
 
         //Skapa ett nytt id som egentligen skulle slagits in av kassören
         int itemId = 12345678;
+        contr.itemId();
 
         //lägg till en vara i försälningen
         SaleInfoDto saleInfo = contr.enterItemId(itemId);
@@ -36,7 +37,7 @@ public class View {
         int cashPayed = 123;
 
         //slå in det betalda beloppet
-        contr.cashPayment(cashPayed);
+     //   contr.cashPayment(cashPayed);
 
 
 

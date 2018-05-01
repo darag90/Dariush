@@ -15,9 +15,7 @@ public class CustomerRegister {
   //  private DiscountRules discountRules = new DiscountRules();
     private ItemList itemList = new ItemList();
     private Item item = new Item();
- //   private ExternalSystem externalSystem = new ExternalSystem(printer);
- //   private PaymentController paymentController = new PaymentController(printer);
-  //  private Controller controller = new Controller(externalSystem, paymentController);
+
 
     /**
      * skapar rabbat för kunden
