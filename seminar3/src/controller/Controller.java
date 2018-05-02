@@ -17,10 +17,11 @@ public class Controller {
     private ExternalSystem externalSystem;
     private Sale sale;
     private Item item;
+    private ItemList itemList;
 
 
 
-    public Controller(ExternalSystem externalSystem, PaymentController paymentController, Item item, ItemList itemList) {
+    public Controller(ExternalSystem externalSystem, PaymentController paymentController) {
         this.paymentController = paymentController;
         this.externalSystem = externalSystem;
 
@@ -58,19 +59,26 @@ public class Controller {
     } */
 
 
-  /*  public int getCost(int Id){
+   /* public int getCost(int Id){
         int cost = item.getItemCost(Id);
         return cost;
     } */
 
-/*
-    public int cashPayment(int cashAmount)
+
+    /**
+     * Metoden för för betalning med kontanter och retur lämnas
+     * @param cashAmount mängden kontanter som kunden ger
+     * @param item item som är till försäljning av den vara/varor kunden tar
+     * @return kostnaden för hela köpet
+     */
+
+    public int cashPayment(int cashAmount, Item item)
     {
-        ItemList list1 = sale.addItem();
+        ItemList list = itemList.getItemList(item);
         int cost = item.getItemCost();
-        int change = paymentController.cashPayment(cashAmount, cost, list1);     // måste fixa cashAmount, klagar på int
+        int change = paymentController.cashPayment(cashAmount, cost, list);     // måste fixa cashAmount, klagar på int
         return change;
-    } */
+    }
 
 
 

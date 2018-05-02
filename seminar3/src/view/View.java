@@ -3,15 +3,22 @@ package view;
 
 import controller.Controller;
 import DTO.SaleInfoDto;
+import model.Reciept;
+import model.Item;
 
 
 public class View {
     private Controller contr;
+    private Item item;
 
 
 
     public View(Controller contr) {
         this.contr = contr;
+    }
+
+    public void Item(){
+        Item item= new Item();
     }
 
     public void sampleExecution() {
@@ -37,7 +44,11 @@ public class View {
         int cashPayed = 123;
 
         //slå in det betalda beloppet
-     //   contr.cashPayment(cashPayed);
+   //     contr.cashPayment(cashPayed, item);  // kanske borde så in customerID också  // item bara test så det ska fungera
+
+        // kvitto för betalning skapad med detaljer
+
+
 
 
 

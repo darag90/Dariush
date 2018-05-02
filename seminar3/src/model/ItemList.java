@@ -2,6 +2,7 @@ package model;
 
 import model.Item;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.lang.StringBuilder;
@@ -12,11 +13,14 @@ public class ItemList {
     private List<Item> list = new ArrayList<>();
 
     public ItemList(){
+        ArrayList<Integer> itemListArrayList = new ArrayList<>();
+        itemListArrayList.add(1);
     }
 
     public List<Item> getList(){
         return list;
     }
+
 
     /**
      * returnerar alla kostnader för item i lista
@@ -28,19 +32,24 @@ public class ItemList {
 
 
     /**
-     * lagrar item i en lista och uppdaterar kostnaden för hela lista
+     * metoden lägger ihopp alla item som i en lista och sedan räcker den kostnaden för
+     * hela köpet
+     * @param item det väljs vilken item, sedan läggs dem ihop
+     * @return här returneras alla varor som blivit vald
      */
 
-  /*  public void itemDTO(Item item){
+    public ItemList getItemList (Item item){
+        ItemList itemList = new ItemList();
         list.add(item);
         cost += item.getItemCost();
-    } */
+        return itemList;
+    }
 
     /**
      * tar en lista av valda item och returnerar en sträng som en lista
      */
 
-    public String resultOfItemList (ItemList list) {
+/*    public String resultOfItemList (ItemList list) {
         StringBuilder sb = new StringBuilder();
         int len = list.getList().size();
         for (int i = 0; i < len; i++) {
@@ -57,7 +66,7 @@ public class ItemList {
 
         }
         return sb.toString();
-    }
+    }  */
 
 
 

@@ -9,6 +9,12 @@ public class Reciept {
     private int cost;
 
 
+    /**
+     * Skapar en ny forum
+     * @param itemCost kostnaden för item
+     * @param list lista av valda item
+     */
+
    public Reciept(int itemCost, ItemList list){
         cost = itemCost;
         int len = list.getList().size();
@@ -16,11 +22,13 @@ public class Reciept {
             sb.append(list.getList().get(i).getItemId());
     }
 
-    public String getSBToString(){
+    public String getSBToString()
+    {
         return sb.toString();
     }
 
-    public int getCost(){
+    public int getCost()
+    {
         return cost;
     }
 
