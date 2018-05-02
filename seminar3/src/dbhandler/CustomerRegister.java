@@ -7,7 +7,7 @@ import model.Printer;
 import model.PaymentController;
 
 import controller.Controller;
-
+import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,11 +42,30 @@ public class CustomerRegister {
         return new CustomerRegister();
     }
 
-    /**
+
+   public String customerList(){
+       String customer1 = "Simon Lagerqvist";
+       String customer2 = "Dariush Ghaderi";
+       String customer3 = "Leif Lindbäck";
+       String customer4 = "Bengt Molin";
+       String customer5 = "Mester Miao ";
+
+
+       System.out.println(customer1);
+       System.out.println(customer2);
+       System.out.println(customer3);
+       System.out.println(customer4);
+       System.out.println(customer5);
+
+       return customerList();
+
+   }
+
+   /**
      * en lista över ett antal customer som är registerad som medlem i store
      */
 
-    public void setCustomerList()
+    public void setCustomerList(long n)
     {
         ArrayList<Integer> customerList = new ArrayList<>(5);
         customerList.add(1);
@@ -56,9 +75,11 @@ public class CustomerRegister {
         customerList.add(5);
 
         System.out.println(customerList);
+
+
     }
 
- /*   public CustomerRegister()
+  /*  public CustomerRegister()
     {
        // boolean customerList = (5 <= 1);
       //  int customerList = 5;
