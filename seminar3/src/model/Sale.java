@@ -4,6 +4,7 @@ import DTO.SaleInfoDto;
 
 import java.util.Date;
 import java.util.LinkedList;
+import java.util.*;
 
 public class Sale
 {
@@ -29,5 +30,22 @@ public class Sale
 
         return new
     } */
+
+
+    // random av valda item
+    public String[] randomItem(){
+        String[] strings1 = {};
+        String[] randomItem = {"milk", "bred", "egg", "chicken", "spaghetti"};
+        List<String> list = new ArrayList<>();
+
+        // add item to list
+        for (String i: randomItem)
+            list.add(i);
+
+        for (int i = 0; i < list.size(); i++){
+            System.out.printf(list.get(i));
+        }
+      return randomItem;
+    }
 
 }

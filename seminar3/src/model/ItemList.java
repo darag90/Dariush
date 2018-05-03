@@ -1,5 +1,7 @@
 package model;
 
+import com.sun.glass.ui.delegate.MenuItemDelegate;
+import dbhandler.ExternalSystem;
 import model.Item;
 
 
@@ -31,10 +33,11 @@ public class ItemList {
     }
 
 
+
     /**
      * metoden lägger ihopp alla item som i en lista och sedan räcker den kostnaden för
      * hela köpet
-     * @param item det väljs vilken item, sedan läggs dem ihop
+     * @param  item det väljs vilken item, sedan läggs dem ihop
      * @return här returneras alla varor som blivit vald
      */
 

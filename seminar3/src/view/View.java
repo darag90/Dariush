@@ -17,9 +17,9 @@ public class View {
         this.contr = contr;
     }
 
-    public void Item(){
+  /*  public void Item(){
         Item item= new Item();
-    }
+    } */
 
     public void sampleExecution() {
         /*Denna metod simulerar ett exempel på en försäljning*/
@@ -37,6 +37,10 @@ public class View {
         //slutför försälningen
         contr.endSale();
 
+        //exentuell customerId förfrågan
+       // boolean id = true;
+        contr.checkCustomerId();
+
         //eventuell rabatt förfrågan
         contr.requestDscount();
 
@@ -44,7 +48,7 @@ public class View {
         int cashPayed = 123;
 
         //slå in det betalda beloppet
-   //     contr.cashPayment(cashPayed, item);  // kanske borde så in customerID också  // item bara test så det ska fungera
+     //   contr.cashPayment(cashPayed, item);  // kanske borde så in customerID också  // item bara test så det ska fungera
 
         // kvitto för betalning skapad med detaljer
 

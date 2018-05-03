@@ -1,6 +1,5 @@
 package dbhandler;
 
-import dbhandler.DiscountRules;
 import dbhandler.ExternalSystem;
 import model.ItemList;
 import model.Printer;
@@ -14,6 +13,7 @@ import java.util.List;
 
 public class CustomerRegister {
     private Printer printer = new Printer();
+  //  private int[] elements = null;
     private DiscountRules discountRules = new DiscountRules();
     private ItemList itemList = new ItemList();
     private ExternalSystem externalSystem = new ExternalSystem(printer);
@@ -33,7 +33,10 @@ public class CustomerRegister {
      */
     public CustomerRegister getCustomerRegidter(int index, boolean result){
         int customerID = itemList.getList().size() - 1;
-        itemList.getList().get(index - 1).equals(result);
+      //  int customerID = setCustomerList();
+        itemList.getList().get( - 1).equals(result);
+      //  int available = customerList();
+
 
         if(customerID == index){
             printResults();                                     // kanske inte behövs
@@ -43,31 +46,33 @@ public class CustomerRegister {
     }
 
 
-   public String customerList(){
-       String customer1 = "Simon Lagerqvist";
-       String customer2 = "Dariush Ghaderi";
-       String customer3 = "Leif Lindbäck";
-       String customer4 = "Bengt Molin";
-       String customer5 = "Mester Miao ";
 
-
-       System.out.println(customer1);
-       System.out.println(customer2);
-       System.out.println(customer3);
-       System.out.println(customer4);
-       System.out.println(customer5);
-
-       return customerList();
-
-   }
 
    /**
+     * kontrollerar om kundens Id finns tillgänglig
+     */
+
+   public boolean getinInfoOfcustomerId(){
+       boolean customerId = false;
+       int availableCustomerId = setCustomerList();
+       int customerName = customerList();
+       for (int pos = 1; pos <= customerName; pos++)   // finns problem i denna rad !!
+       if(customerName == availableCustomerId)
+       {
+           customerId = true;
+           break;
+       }
+       return customerId;
+   }
+
+    /**
      * en lista över ett antal customer som är registerad som medlem i store
      */
 
-    public void setCustomerList(long n)
+    public int setCustomerList()
     {
-        ArrayList<Integer> customerList = new ArrayList<>(5);
+        int custom = 1;
+        ArrayList<Integer> customerList = new ArrayList<>();
         customerList.add(1);
         customerList.add(2);
         customerList.add(3);
@@ -76,8 +81,34 @@ public class CustomerRegister {
 
         System.out.println(customerList);
 
+        return custom;
+    }
+
+
+
+    // lista över ett vald antal kunder
+    public int customerList(){
+        int newCustomer = 1;
+        String customer1 = "Simon Lagerqvist";
+        String customer2 = "Dariush Ghaderi";
+        String customer3 = "Leif Lindbäck";
+        String customer4 = "Bengt Molin";
+        String customer5 = "Mester Miao ";
+
+
+        System.out.println(customer1);
+        System.out.println(customer2);
+        System.out.println(customer3);
+        System.out.println(customer4);
+        System.out.println(customer5);
+
+        return newCustomer;
 
     }
+
+
+
+
 
   /*  public CustomerRegister()
     {
@@ -88,11 +119,6 @@ public class CustomerRegister {
 
 
     } */
-
-
-
-
-
 
 
 

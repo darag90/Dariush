@@ -8,6 +8,7 @@ import model.ItemList;
 import model.PaymentController;
 import DTO.SaleInfoDto;
 import model.Sale;
+import dbhandler.CustomerRegister;
 import java.lang.String;
 
 
@@ -18,6 +19,7 @@ public class Controller {
     private Sale sale;
     private Item item;
     private ItemList itemList;
+    private CustomerRegister customerRegister;
 
 
 
@@ -41,12 +43,25 @@ public class Controller {
         return saleInfoDto;
     }
 
+
+
     public void endSale()
     {
     }
 
+
+    // lagrar customerId
+    public void checkCustomerId(){
+
+        this.customerRegister = new CustomerRegister();
+        customerRegister.getinInfoOfcustomerId();
+
+    }
+
+
     public void requestDscount()
     {
+
     }
 
     public void itemId(){
@@ -68,13 +83,14 @@ public class Controller {
     /**
      * Metoden för för betalning med kontanter och retur lämnas
      * @param cashAmount mängden kontanter som kunden ger
-     * @param item item som är till försäljning av den vara/varor kunden tar
+     * @param item1 item som är till försäljning av den vara/varor kunden tar
      * @return kostnaden för hela köpet
      */
 
-    public int cashPayment(int cashAmount, Item item)
+    public int cashPayment(int cashAmount, Item item1)
     {
-        ItemList list = itemList.getItemList(item);
+      //  this.paymentController = new PaymentController();
+        ItemList list = itemList.getItemList(item1);
         int cost = item.getItemCost();
         int change = paymentController.cashPayment(cashAmount, cost, list);     // måste fixa cashAmount, klagar på int
         return change;
