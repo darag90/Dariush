@@ -31,7 +31,7 @@ public class CustomerRegister {
      *  resultatet om kunden har rätt till räbbat eller inte kommer att raporteras
      *  om CustomerID == true då kommer det bli godkänt annars blir det null
      */
-    public CustomerRegister getCustomerRegidter(int index, boolean result){
+  /*  public CustomerRegister getCustomerRegidter(int index, boolean result){
         int customerID = itemList.getList().size() - 1;
       //  int customerID = setCustomerList();
         itemList.getList().get( - 1).equals(result);
@@ -43,7 +43,7 @@ public class CustomerRegister {
             return null;
         }
         return new CustomerRegister();
-    }
+    } */
 
 
 

@@ -2,6 +2,7 @@ package model;
 
 import DTO.SaleInfoDto;
 
+
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.*;
@@ -9,6 +10,8 @@ import java.util.*;
 public class Sale
 {
     private Date saleTime;
+    private int cost;
+    private Item item = new Item();
     private LinkedList<Item> listOfItems = new LinkedList<Item>();
 
     public Sale()
@@ -43,9 +46,25 @@ public class Sale
             list.add(i);
 
         for (int i = 0; i < list.size(); i++){
-            System.out.printf(list.get(i));
+            System.out.printf("%S ", list.get(i));
         }
-      return randomItem;
+      return strings1;
     }
+
+
+
+  /*  public int getCost(Item item){
+        ItemList list = getItemList(item);
+        return list.getCost();
+    }
+
+
+    public ItemList getItemList(Item item1){
+        ArrayList<Item> list = new ArrayList<>();
+        ItemList itemList = new ItemList();
+        list.add(item1);
+        cost += item.getItemCost();
+        return itemList;
+    }  */
 
 }
