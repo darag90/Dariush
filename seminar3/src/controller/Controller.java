@@ -59,16 +59,15 @@ public class Controller {
     }
 
 
-    public void requestDscount()
+    public double requestDscount()
     {
-    //    this.discountRules = new DiscountRules();
-    //    discountRules.DiscountInPrecent();
-
+        this.discountRules = new DiscountRules(sale.getSale());
+        return discountRules.DiscountInPrecent();
     }
 
     public void itemId(){
         System.out.println("HEJ");
-        this.item = new Item();
+        this.item = new Item(11,11, "j");
     }
 
 

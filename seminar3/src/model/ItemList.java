@@ -12,7 +12,7 @@ import java.util.*;
 
 
 public class ItemList {
-    private Item item = new Item();
+    private Item item = new Item(1,1,"f");
     private int cost = 0;
     private List<Item> list = new ArrayList<>();
 

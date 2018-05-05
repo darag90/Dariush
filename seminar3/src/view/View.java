@@ -32,7 +32,7 @@ public class View {
         int itemIdGurka = 1234;
         int itemIdBanan = 5678;
         int itemIdTandkräm = 1357;
-        //contr.itemId();
+        contr.itemId();
 
         //lägg till tre varor i försälningen
         saleInfo = contr.enterItemId(itemIdGurka);
@@ -51,9 +51,9 @@ public class View {
         //exentuell customerId förfrågan
         contr.checkCustomerId();
 
-        //eventuell rabatt förfrågan
-        contr.requestDscount();
-
+        //eventuellrabatt förfrågan
+        double priceAfterDiscount = contr.requestDscount();
+        printNewPriceAfterdiscount(priceAfterDiscount);
         //skapa ett belop från betalning
         int cashPayed = 123;
 
@@ -61,6 +61,8 @@ public class View {
         contr.cashPayment(cashPayed, item);  // kanske borde så in customerID också  // item bara test så det ska fungera
 
         // kvitto för betalning skapad med detaljer
+
+        //
     }
 
     private void printInfoDisplay(SaleInfoDto saleInfo)
@@ -69,6 +71,10 @@ public class View {
         System.out.println("quantity: " + saleInfo.getlastItem().getItemQuantity());
         System.out.println("Total Price: " + saleInfo.getTotalCost());
         System.out.println();
+    }
+    private void printNewPriceAfterdiscount(double price)
+    {
+        System.out.println("new price after discount: " + price);
     }
 }
 

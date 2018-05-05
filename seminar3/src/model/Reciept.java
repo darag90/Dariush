@@ -18,7 +18,7 @@ public class Reciept {
         cost = itemCost;
         int len = list.getList().size();
         System.out.println("len:"+len);
-        list.getList().add(new Item());
+        list.getList().add(new Item(1,1,"d"));
         if(len!=0)
         {
             for (int i = 0; i <= len; i++)
