@@ -2,6 +2,7 @@
 package controller;
 
 
+import dbhandler.DiscountRules;
 import dbhandler.ExternalSystem;
 import model.*;
 import DTO.SaleInfoDto;
@@ -18,6 +19,7 @@ public class Controller {
     private ItemList itemList = new ItemList();
  //   private ItemList itemList;
     private CustomerRegister customerRegister;
+    private DiscountRules discountRules;
 
 
 
@@ -95,7 +97,6 @@ public class Controller {
         ItemList list = itemList.getItemList(item1);
      //   int list = sale.getCost(item1);
     //    ItemList itemList = sale.getItemList(item1);
-        System.out.println(item);
         int cost = item.getItemCost();
 
         int change = paymentController.cashPayment(cashAmount, cost, list);     // måste fixa cashAmount, klagar på int
