@@ -14,7 +14,8 @@ import java.util.List;
 public class CustomerRegister {
     private Printer printer = new Printer();
   //  private int[] elements = null;
-    private DiscountRules discountRules = new DiscountRules();
+  //  private DiscountRules discountRules = new DiscountRules();
+    private DiscountRules discountRules;
     private ItemList itemList = new ItemList();
     private ExternalSystem externalSystem = new ExternalSystem(printer);
     private PaymentController paymentController = new PaymentController(printer);
