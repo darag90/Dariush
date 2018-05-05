@@ -32,7 +32,7 @@ public class View {
         int itemIdGurka = 1234;
         int itemIdBanan = 5678;
         int itemIdTandkräm = 1357;
-        //contr.itemId();
+        contr.itemId();
 
         //lägg till tre varor i försälningen
         saleInfo = contr.enterItemId(itemIdGurka);

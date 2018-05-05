@@ -12,7 +12,7 @@ public class Sale
     private LinkedList<Item> listOfItems = new LinkedList<Item>();
     private int totalCost;
     private Item lastItem;
-    private Item item = new Item();
+    //private Item item = new Item();
 
     public Sale()
     {

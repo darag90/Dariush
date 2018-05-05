@@ -62,10 +62,10 @@ public class Controller {
 
     }
 
-    /*public void itemId(){
-        this.item = new Item();
+    public void itemId(){
+        this.item = new Item(1,1,"s");
     }
-*/
+
 
     /* public Payment enterPayment(int cashAmount){
 
@@ -95,7 +95,9 @@ public class Controller {
         ItemList list = itemList.getItemList(item1);
      //   int list = sale.getCost(item1);
     //    ItemList itemList = sale.getItemList(item1);
+        System.out.println(item);
         int cost = item.getItemCost();
+
         int change = paymentController.cashPayment(cashAmount, cost, list);     // måste fixa cashAmount, klagar på int
       //  System.out.println();
         return change;
