@@ -37,10 +37,11 @@ public class Controller {
     public SaleInfoDto enterItemId(int id)
     {
         Item item = externalSystem.getItem(id);
-        sale.addItem(item);
-        SaleInfoDto saleInfoDto = new SaleInfoDto();
-
-        return saleInfoDto;
+        if(item != null)
+        {
+            sale.addItem(item);
+        }
+        return sale.getSale();
     }
 
 
@@ -64,10 +65,10 @@ public class Controller {
 
     }
 
-    public void itemId(){
+    /*public void itemId(){
         this.item = new Item();
     }
-
+*/
 
     /* public Payment enterPayment(int cashAmount){
 

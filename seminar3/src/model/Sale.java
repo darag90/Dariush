@@ -8,8 +8,10 @@ import java.util.*;
 
 public class Sale
 {
-    private Date saleTime;
+    private final Date saleTime;
     private LinkedList<Item> listOfItems = new LinkedList<Item>();
+    private int totalCost;
+    private Item lastItem;
 
     public Sale()
     {
@@ -18,13 +20,41 @@ public class Sale
 
     public SaleInfoDto getSale()
     {
-        return new SaleInfoDto();
+        //skapar en kopia för att få bra inkapsling
+        return new SaleInfoDto((LinkedList<Item>) listOfItems.clone(),totalCost,saleTime,lastItem);
     }
 
     public void addItem(Item item)
     {
-        this.listOfItems.add(item);
+        this.lastItem = item;
+        boolean itemAlredyExist = false;
+        for (Item currentItem : listOfItems)
+        {
+            itemAlredyExist = currentItem.equals(item);
+            System.out.println(itemAlredyExist);
+            if(itemAlredyExist)
+            {
+                lastItem = currentItem;
+                lastItem.increaseItemQuantity();
+                break;
+            }
+        }
+
+
+        if (!itemAlredyExist)
+        {
+            item.increaseItemQuantity();
+            this.listOfItems.add(item);
+        }
+        calulateTotalCost();
+
     }
+
+    private void calulateTotalCost()
+    {
+            totalCost += lastItem.getItemCost();//* listOfItems.get(0).getItemQuantity();//itemQuantity * Price
+    }
+
 
   /*  public SaleInfo uppdateCost(int itemCost, int totalCost){
 

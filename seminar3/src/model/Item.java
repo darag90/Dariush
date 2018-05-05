@@ -22,15 +22,16 @@ public class Item {
 
 
 
-    public void Item(int id, int itemCost /* int itemList */){
+    public Item(int id, int itemCost, String itemName){
      //   this.itemList = itemList;
         this.itemCost = itemCost;
         this.idNumber = id;
+        this.itemName = itemName;
     }
 
-    public void QuantityItem(boolean result){
-        this.result = result;
-    }
+//    public void QuantityItem(boolean result){
+//        this.result = result;
+//    }
 
     // test
   /*  public int getItemList(){
@@ -44,6 +45,12 @@ public class Item {
 
     public int getItemQuantity(){
         return itemQuantity;
+    }
+    public void increaseItemQuantity(){
+       this.itemQuantity += 1;
+    }
+    public String getItemName(){
+        return itemName;
     }
 
     public int getItemCost(){
@@ -64,9 +71,10 @@ public class Item {
 
         if(!(this.itemCost == item.getItemCost())){
             return false;
+
         }
 
-        if(!(this.idNumber == item.getItemId())){
+        else if(!(this.idNumber == item.getItemId())){
             return false;
         }
 
