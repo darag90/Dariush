@@ -25,6 +25,15 @@ public class Sale
         return new SaleInfoDto((LinkedList<Item>) listOfItems.clone(),totalCost,saleTime,lastItem);
     }
 
+    public SaleInfoDto finishRegistration()
+    {
+       double tax = (double)totalCost*0.12;
+        SaleInfoDto saleInfoDto = getSale();
+        saleInfoDto.setTax(tax);
+        saleInfoDto.setTotalCost(totalCost+tax);
+        return saleInfoDto;
+    }
+
     public void addItem(Item item)
     {
         this.lastItem = item;

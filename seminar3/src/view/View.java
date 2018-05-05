@@ -46,7 +46,8 @@ public class View {
 
 
         //slutför försäljningen
-        contr.endSale();
+        SaleInfoDto saleInfoRegistrationDone = contr.endSale();
+        printInfoDisplayTotal(saleInfoRegistrationDone);
 
         //exentuell customerId förfrågan
         contr.checkCustomerId();
@@ -68,6 +69,13 @@ public class View {
         System.out.println(saleInfo.getlastItem().getItemName() + " pris: " + saleInfo.getlastItem().getItemCost());
         System.out.println("quantity: " + saleInfo.getlastItem().getItemQuantity());
         System.out.println("Total Price: " + saleInfo.getTotalCost());
+        System.out.println();
+    }
+
+    private void printInfoDisplayTotal(SaleInfoDto saleInfo)
+    {
+        System.out.println("Total price to pay: " + saleInfo.getTotalCost());
+        System.out.println("Of Which is tax: " + saleInfo.getTax());
         System.out.println();
     }
 }
