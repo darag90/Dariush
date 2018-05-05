@@ -13,6 +13,7 @@ public class Sale
     private int totalCost;
     private Item lastItem;
     private Item item = new Item(1,1,"df");
+    //private Item item = new Item();
 
     public Sale()
     {
@@ -27,6 +28,15 @@ public class Sale
     {
         //skapar en kopia för att få bra inkapsling
         return new SaleInfoDto((LinkedList<Item>) listOfItems.clone(),totalCost,saleTime,lastItem);
+    }
+
+    public SaleInfoDto finishRegistration()
+    {
+       double tax = (double)totalCost*0.12;
+        SaleInfoDto saleInfoDto = getSale();
+        saleInfoDto.setTax(tax);
+        saleInfoDto.setTotalCost(totalCost+tax);
+        return saleInfoDto;
     }
 
     public void addItem(Item item)

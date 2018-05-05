@@ -46,7 +46,8 @@ public class View {
 
 
         //slutför försäljningen
-        contr.endSale();
+        SaleInfoDto saleInfoRegistrationDone = contr.endSale();
+        printInfoDisplayTotal(saleInfoRegistrationDone);
 
         //exentuell customerId förfrågan
         contr.checkCustomerId();
@@ -61,8 +62,6 @@ public class View {
         contr.cashPayment(cashPayed, item);  // kanske borde så in customerID också  // item bara test så det ska fungera
 
         // kvitto för betalning skapad med detaljer
-
-        //
     }
 
     private void printInfoDisplay(SaleInfoDto saleInfo)
@@ -75,6 +74,13 @@ public class View {
     private void printNewPriceAfterdiscount(double price)
     {
         System.out.println("new price after discount: " + price);
+    }
+
+    private void printInfoDisplayTotal(SaleInfoDto saleInfo)
+    {
+        System.out.println("Total price to pay: " + saleInfo.getTotalCost());
+        System.out.println("Of Which is tax: " + saleInfo.getTax());
+        System.out.println();
     }
 }
 

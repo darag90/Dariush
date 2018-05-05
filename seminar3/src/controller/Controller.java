@@ -46,8 +46,9 @@ public class Controller {
 
 
 
-    public void endSale()
+    public SaleInfoDto endSale()
     {
+        return sale.finishRegistration();
     }
 
 
