@@ -17,8 +17,14 @@ public class Reciept {
    public Reciept(int itemCost, ItemList list){
         cost = itemCost;
         int len = list.getList().size();
-        for (int i = 0; i <= len; i++){
-            sb.append(list.getList().get(i).getItemId() + ", ");
+        System.out.println("len:"+len);
+        list.getList().add(new Item());
+        if(len!=0)
+        {
+            for (int i = 0; i <= len; i++)
+            {
+                sb.append(list.getList().get(i).getItemId() + ", ");
+            }
         }
     }
 
