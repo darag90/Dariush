@@ -10,6 +10,7 @@ import model.Item;
 public class View {
     private Controller contr;
     private Item item;
+    private SaleInfoDto saleInfo;
 
 
 
@@ -27,18 +28,27 @@ public class View {
         //Starta försäljningen
         contr.startSale();
 
-        //Skapa ett nytt id som egentligen skulle slagits in av kassören
-        int itemId = 12345678;
-        contr.itemId();
+        //Skapa tre st nya id:n som egentligen skulle slagits in av kassören
+        int itemIdGurka = 1234;
+        int itemIdBanan = 5678;
+        int itemIdTandkräm = 1357;
+        //contr.itemId();
 
-        //lägg till en vara i försälningen
-        SaleInfoDto saleInfo = contr.enterItemId(itemId);
+        //lägg till tre varor i försälningen
+        saleInfo = contr.enterItemId(itemIdGurka);
+        printInfoDisplay(saleInfo);
+        saleInfo = contr.enterItemId(itemIdBanan);
+        printInfoDisplay(saleInfo);
+        saleInfo = contr.enterItemId(itemIdGurka);
+        printInfoDisplay(saleInfo);
+        saleInfo = contr.enterItemId(itemIdTandkräm);
+        printInfoDisplay(saleInfo);
 
-        //slutför försälningen
+
+        //slutför försäljningen
         contr.endSale();
 
         //exentuell customerId förfrågan
-       // boolean id = true;
         contr.checkCustomerId();
 
         //eventuell rabatt förfrågan
@@ -51,11 +61,14 @@ public class View {
         contr.cashPayment(cashPayed, item);  // kanske borde så in customerID också  // item bara test så det ska fungera
 
         // kvitto för betalning skapad med detaljer
+    }
 
-
-
-
-
+    private void printInfoDisplay(SaleInfoDto saleInfo)
+    {
+        System.out.println(saleInfo.getlastItem().getItemName() + " pris: " + saleInfo.getlastItem().getItemCost());
+        System.out.println("quantity: " + saleInfo.getlastItem().getItemQuantity());
+        System.out.println("Total Price: " + saleInfo.getTotalCost());
+        System.out.println();
     }
 }
 

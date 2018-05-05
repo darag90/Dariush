@@ -5,17 +5,21 @@ package dbhandler;
 import model.ItemList;
 import model.Printer;
 import model.Item;
+import dbhandler.InventorySystem;
 
 
 public class ExternalSystem {
     private Printer printer = new Printer();
     private int Item;
+    private AccountingSystem accountingSystem;
+    private InventorySystem inventorySystem;
   //  private CustomerRegister customerRegister = new CustomerRegister();
 
 
     public ExternalSystem(Printer printer)
     {
         this.printer = printer;
+        this.inventorySystem = new InventorySystem();
     }
 
  /*   public CustomerRegister getCustomerRegister(){
@@ -23,13 +27,7 @@ public class ExternalSystem {
     } */
 
     public Item getItem(int id){
-
-
-        //@todo borde kanse fixa en fakad databas??
-        int a = 3;
-        int v = 4;
-        return new Item();
-
+        return inventorySystem.getItem(id);
     }
 
  /*    public int getItemCost(int cost){

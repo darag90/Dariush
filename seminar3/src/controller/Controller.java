@@ -37,10 +37,11 @@ public class Controller {
     public SaleInfoDto enterItemId(int id)
     {
         Item item = externalSystem.getItem(id);
-        sale.addItem(item);
-        SaleInfoDto saleInfoDto = new SaleInfoDto();
-
-        return saleInfoDto;
+        if(item != null)
+        {
+            sale.addItem(item);
+        }
+        return sale.getSale();
     }
 
 
@@ -99,7 +100,6 @@ public class Controller {
         ItemList list = itemList.getItemList(item1);
      //   int list = sale.getCost(item1);
     //    ItemList itemList = sale.getItemList(item1);
-        System.out.println(item);
         int cost = item.getItemCost();
         int change = paymentController.cashPayment(cashAmount, cost, list);     // måste fixa cashAmount, klagar på int
       //  System.out.println();
