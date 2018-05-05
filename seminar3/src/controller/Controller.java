@@ -60,13 +60,15 @@ public class Controller {
     }
 
 
-    public void requestDscount()
+    public double requestDscount()
     {
-
+        this.discountRules = new DiscountRules(sale.getSale());
+        return discountRules.DiscountInPrecent();
     }
 
     public void itemId(){
-        this.item = new Item(1,1,"s");
+        System.out.println("HEJ");
+        this.item = new Item(11,11, "j");
     }
 
 

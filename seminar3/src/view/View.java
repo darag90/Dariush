@@ -52,9 +52,9 @@ public class View {
         //exentuell customerId förfrågan
         contr.checkCustomerId();
 
-        //eventuell rabatt förfrågan
-        contr.requestDscount();
-
+        //eventuellrabatt förfrågan
+        double priceAfterDiscount = contr.requestDscount();
+        printNewPriceAfterdiscount(priceAfterDiscount);
         //skapa ett belop från betalning
         int cashPayed = 180;
 
@@ -70,6 +70,10 @@ public class View {
         System.out.println("quantity: " + saleInfo.getlastItem().getItemQuantity());
         System.out.println("Total Price: " + saleInfo.getTotalCost());
         System.out.println();
+    }
+    private void printNewPriceAfterdiscount(double price)
+    {
+        System.out.println("new price after discount: " + price);
     }
 
     private void printInfoDisplayTotal(SaleInfoDto saleInfo)

@@ -12,6 +12,7 @@ public class Sale
     private LinkedList<Item> listOfItems = new LinkedList<Item>();
     private int totalCost;
     private Item lastItem;
+    private Item item = new Item(1,1,"df");
     //private Item item = new Item();
 
     public Sale()
@@ -19,6 +20,10 @@ public class Sale
         this.saleTime = new Date();
     }
 
+    public int getTotalCost()
+    {
+        return totalCost;
+    }
     public SaleInfoDto getSale()
     {
         //skapar en kopia för att få bra inkapsling
