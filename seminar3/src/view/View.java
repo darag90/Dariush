@@ -56,10 +56,10 @@ public class View {
         contr.requestDscount();
 
         //skapa ett belop från betalning
-        int cashPayed = 123;
+        int cashPayed = 180;
 
         //slå in det betalda beloppet
-        contr.cashPayment(cashPayed, item);  // kanske borde så in customerID också  // item bara test så det ska fungera
+        double change = contr.cashPayment(cashPayed);  // kanske borde så in customerID också  // item bara test så det ska fungera
 
         // kvitto för betalning skapad med detaljer
     }

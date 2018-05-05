@@ -88,19 +88,19 @@ public class Controller {
      * @return kostnaden för hela köpet
      */
 
-    public int cashPayment(int cashAmount, Item item1)
+    public double cashPayment(int cashAmount)
     {
       //  this.paymentController = new PaymentController();
      //   this.itemList = new ItemList();
      //   this.item = new Item();
 
-        String[] list1 = sale.randomItem();
-        ItemList list = itemList.getItemList(item1);
-     //   int list = sale.getCost(item1);
+        //String[] list1 = sale.randomItem();
+        //ItemList list = itemList.getItemList(item1);
+        //int list = sale.getCost(item1);
     //    ItemList itemList = sale.getItemList(item1);
-        int cost = item.getItemCost();
+        //int cost = item.getItemCost();
 
-        int change = paymentController.cashPayment(cashAmount, cost, list);     // måste fixa cashAmount, klagar på int
+        double change = paymentController.cashPayment(cashAmount, sale.getSale());     // måste fixa cashAmount, klagar på int
       //  System.out.println();
         return change;
     }

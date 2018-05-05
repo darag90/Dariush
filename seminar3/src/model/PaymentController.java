@@ -27,12 +27,12 @@ public class PaymentController {
      * @return skickar tillbaka pengar till kunden om det skulle finnas växel kvar
      */
 
-    public int cashPayment(int cashAmount, int itemCost, ItemList list){
-        Reciept reciept = new Reciept(itemCost, list);
+    public double cashPayment(int cashAmount, DTO.SaleInfoDto saleInfoDto){
+        Reciept reciept = new Reciept(saleInfoDto);
         printer.printReciept(reciept);
 
-        int change = cashAmount - itemCost;
-        System.out.println("Change" + change);    //(debugg?)
+        double change = cashAmount - saleInfoDto.getTotalCost();
+        System.out.println("Change: " + change);    //(debugg?)
         return change;
     }
 

@@ -22,6 +22,11 @@ public class SaleInfoDto
         this.listOfItems = listOfItemsint;
     }
 
+    public LinkedList getItems()
+    {
+        return listOfItems;
+    }
+
 
     public void setTax(double tax)
     {
