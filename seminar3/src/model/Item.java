@@ -23,7 +23,6 @@ public class Item {
 
 
     public Item(int id, int itemCost, String itemName){
-     //   this.itemList = itemList;
         this.itemCost = itemCost;
         this.idNumber = id;
         this.itemName = itemName;
@@ -71,7 +70,6 @@ public class Item {
 
         if(!(this.itemCost == item.getItemCost())){
             return false;
-
         }
 
         else if(!(this.idNumber == item.getItemId())){
@@ -109,10 +107,10 @@ public class Item {
          * lagrar item i en lista och uppdaterar kostnaden för hela lista
          */
 
-        public void itemDTO(Item item){//@todo ta bort?
+   /*     public void itemDTO(Item item){//@todo ta bort?
             list.add(item);
             cost += item.getItemCost();
-        }
+        } */
 
         /**
          * tar en lista av valda item och returnerar en sträng som en lista

@@ -3,14 +3,11 @@ package controller;
 
 
 import dbhandler.ExternalSystem;
-import model.Item;
-import model.ItemList;
-import model.PaymentController;
+import model.*;
 import DTO.SaleInfoDto;
-import model.Sale;
 import dbhandler.CustomerRegister;
 import java.lang.String;
-
+import model.Sale;
 
 public class Controller {
 
@@ -18,7 +15,8 @@ public class Controller {
     private ExternalSystem externalSystem;
     private Sale sale;
     private Item item;
-    private ItemList itemList;
+    private ItemList itemList = new ItemList();
+ //   private ItemList itemList;
     private CustomerRegister customerRegister;
 
 
@@ -52,11 +50,10 @@ public class Controller {
 
 
     // lagrar customerId
-    public void checkCustomerId(){
-
+    public void checkCustomerId()
+    {
         this.customerRegister = new CustomerRegister();
         customerRegister.getinInfoOfcustomerId();
-
     }
 
 
@@ -91,9 +88,16 @@ public class Controller {
     public int cashPayment(int cashAmount, Item item1)
     {
       //  this.paymentController = new PaymentController();
+     //   this.itemList = new ItemList();
+     //   this.item = new Item();
+
+        String[] list1 = sale.randomItem();
         ItemList list = itemList.getItemList(item1);
+     //   int list = sale.getCost(item1);
+    //    ItemList itemList = sale.getItemList(item1);
         int cost = item.getItemCost();
         int change = paymentController.cashPayment(cashAmount, cost, list);     // måste fixa cashAmount, klagar på int
+      //  System.out.println();
         return change;
     }
 

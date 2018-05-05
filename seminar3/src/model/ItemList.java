@@ -1,26 +1,29 @@
 package model;
 
-import com.sun.glass.ui.delegate.MenuItemDelegate;
+
 import dbhandler.ExternalSystem;
 import model.Item;
 
 
 import java.util.ArrayList;
 import java.util.List;
-import java.lang.StringBuilder;
+import java.util.*;
+
 
 
 public class ItemList {
+    private Item item = new Item();
     private int cost = 0;
     private List<Item> list = new ArrayList<>();
 
     public ItemList(){
-        ArrayList<Integer> itemListArrayList = new ArrayList<>();
-        itemListArrayList.add(1);
+
     }
 
+
+    // felet ligger här
     public List<Item> getList(){
-        return list;
+      return list;
     }
 
 
@@ -37,15 +40,16 @@ public class ItemList {
     /**
      * metoden lägger ihopp alla item som i en lista och sedan räcker den kostnaden för
      * hela köpet
-     * @param  item det väljs vilken item, sedan läggs dem ihop
+     * @param item1 det väljs vilken item, sedan läggs dem ihop
      * @return här returneras alla varor som blivit vald
      */
 
-    public ItemList getItemList (Item item){
+    public ItemList getItemList (Item item1){
         ItemList itemList = new ItemList();
-        list.add(item);
+        list.add(item1);
         cost += item.getItemCost();
         return itemList;
+
     }
 
     /**

@@ -12,6 +12,7 @@ public class Sale
     private LinkedList<Item> listOfItems = new LinkedList<Item>();
     private int totalCost;
     private Item lastItem;
+    private Item item = new Item();
 
     public Sale()
     {
@@ -73,9 +74,9 @@ public class Sale
             list.add(i);
 
         for (int i = 0; i < list.size(); i++){
-            System.out.printf(list.get(i));
+            System.out.printf("%S ", list.get(i));
         }
-      return randomItem;
+      return strings1;
     }
 
 }
