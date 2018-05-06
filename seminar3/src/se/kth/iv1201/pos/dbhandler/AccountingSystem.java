@@ -1,7 +1,6 @@
-package dbhandler;
+package se.kth.iv1201.pos.dbhandler;
 
-import model.Sale;
-import DTO.SaleInfoDto;
+import se.kth.iv1201.pos.dto.SaleInfoDto;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,11 +1,10 @@
 
-package dbhandler;
+package se.kth.iv1201.pos.dbhandler;
 
 
-import model.ItemList;
-import model.Printer;
-import model.Item;
-import dbhandler.InventorySystem;
+
+import se.kth.iv1201.pos.model.Printer;
+import se.kth.iv1201.pos.model.Item;
 
 
 public class ExternalSystem {

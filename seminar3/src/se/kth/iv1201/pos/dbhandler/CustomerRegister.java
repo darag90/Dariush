@@ -1,13 +1,11 @@
-package dbhandler;
+package se.kth.iv1201.pos.dbhandler;
 
-import dbhandler.ExternalSystem;
-import model.Printer;
-import model.PaymentController;
+import se.kth.iv1201.pos.model.Printer;
+import se.kth.iv1201.pos.model.PaymentController;
 
 
 import java.lang.String;
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class CustomerRegister {
