@@ -10,7 +10,7 @@ public class View {
     private Controller contr;
     private Item item;
     private SaleInfoDto saleInfo;
-    private CustomerRegister customerRegister;
+
 
 
 
@@ -47,10 +47,9 @@ public class View {
         printInfoDisplayTotal(saleInfoRegistrationDone);
 
         //exentuell customerId förfrågan
-        int id = 3;
+        int id = 2;
         String customerRegister = contr.checkCustomerId(id);
         printCustomerId(customerRegister);
-
 
 
         //eventuellrabatt förfrågan

@@ -12,6 +12,10 @@ kommer varoran vara inlagda som Item objekt från början.
 
     private Map<Integer, Item> itemsInInventory = new HashMap<>();
 
+    /**
+     * Denna metod anger då item id, costnaden, och dess namne
+     */
+
     public InventorySystem()
     {
         /*som exemel görs följande varor
@@ -24,7 +28,12 @@ kommer varoran vara inlagda som Item objekt från början.
         this.itemsInInventory.put( 1357, new Item(1234,60,"tandkräm oral-b") );
     }
 
-    //en metod för att hämta information om varorna
+
+    /**
+     * en metod för att hämta information om varorna
+     * @param id items id
+     * @return returnera varans id
+     */
     public Item getItem (int id)
     {
         return itemsInInventory.get(id);

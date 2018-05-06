@@ -1,55 +1,40 @@
 package se.kth.iv1201.pos.dbhandler;
 
-import se.kth.iv1201.pos.model.Printer;
-import se.kth.iv1201.pos.model.PaymentController;
-
 
 import java.lang.String;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.HashMap;
 
 
+/**
+ * Denna klass har ansvar för att kontrollera kundens id
+ * I denna klass finns också kunderna namne reggat
+ * @author Dariush Aghadai Ghaderi, darag@kth.se
+ * @author Simon Lagerqvist, simlag@kth.se
+ * @version 1.0
+ * @since 2018-05-06
+ */
+
 public class CustomerRegister {
-    private Printer printer = new Printer();
-    private DiscountRules discountRules;
-    private ExternalSystem externalSystem = new ExternalSystem(printer);
-    private PaymentController paymentController = new PaymentController(printer);
 
-
-
-   /**
-     * kontrollerar om kundens Id finns tillgänglig
-     */
-
-/*   public boolean getinInfoOfcustomerId(){
-       boolean customerId = false;
-       ArrayList availableCustomerId = setCustomerList();
-       ArrayList customerName = customerList();
-       for (ArrayList pos = 1; pos <= 5; pos++)   // finns problem i denna rad !!
-       if(customerName[pos] == availableCustomerId)
-       {
-           customerId = true;
-           break;
-       }
-       return customerId;
-   }
 
     /**
-     * en lista över ett antal customer som är registerad som medlem i store
+     * Metoden används för att kontrollerna om kundens id finns i systemt
+     * @param id det används för att slå in kundens id
+     * @return returnnerar om kund finns registerad eller inte
      */
 
      public String getInfoOfCustomerId(int id){
          HashMap availableCustomerId = cusromerInfo();
          if (availableCustomerId.get(id)==null)
-            // return "false";
              return "false";
          else
             return (String)availableCustomerId.get(id);
-
      }
 
-
+    /**
+     * Här lagras kundens namne och dess id nummer
+     * @return här returneras customers info
+     */
 
     public HashMap cusromerInfo(){
 
@@ -61,5 +46,4 @@ public class CustomerRegister {
         customers.put(5, "David Ingarson");
         return customers;
     }
-
 }

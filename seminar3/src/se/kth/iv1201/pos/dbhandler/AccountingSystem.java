@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
 
-
+/**
+ * accounting system lagrar hela affären i en list, egentligen borde den skicka information om affären
+ * till det extärna accoutingsystemet med då inget sådant finns lagras det här istället.
+ */
 public class AccountingSystem
 {
-/*accounting system lagrar hela affären i en list, egentligen borde den skicka information om affären
-till det extärna accoutingsystemet med då inget sådant finns lagras det här istället.
- */
 
     private List<SaleAccountingInformation> fisishedSales;
     public AccountingSystem()

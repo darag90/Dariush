@@ -12,12 +12,6 @@ public class Reciept {
 
 
 
-    /**
-     * Skapar en ny forum
-     * @param itemCost kostnaden för item
-     * @param list lista av valda item
-     */
-
 
    public Reciept(SaleInfoDto saleInfoDto){
         cost = saleInfoDto.getTotalCost();
