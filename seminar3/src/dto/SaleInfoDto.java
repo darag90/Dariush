@@ -27,6 +27,11 @@ public class SaleInfoDto
         return listOfItems;
     }
 
+    public Date getSaleTime()
+    {
+        return saleTime;
+    }
+
 
     public void setTax(double tax)
     {

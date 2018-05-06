@@ -24,6 +24,7 @@ public class Sale
     {
         return totalCost;
     }
+
     public SaleInfoDto getSale()
     {
         //skapar en kopia för att få bra inkapsling
