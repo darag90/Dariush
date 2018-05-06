@@ -8,6 +8,8 @@ import model.*;
 import DTO.SaleInfoDto;
 import dbhandler.CustomerRegister;
 import java.lang.String;
+import java.util.HashMap;
+
 import model.Sale;
 
 public class Controller {
@@ -53,10 +55,10 @@ public class Controller {
 
 
     // lagrar customerId
-    public void checkCustomerId(int id)
+    public String checkCustomerId(int id)
     {
         this.customerRegister = new CustomerRegister();
-        customerRegister.getinInfoOfcustomerId();
+        return customerRegister.getInfoOfCustomerId(id);
     }
 
 

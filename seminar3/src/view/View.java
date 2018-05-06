@@ -5,12 +5,16 @@ import controller.Controller;
 import DTO.SaleInfoDto;
 import model.Reciept;
 import model.Item;
+import dbhandler.CustomerRegister;
+
+import java.util.HashMap;
 
 
 public class View {
     private Controller contr;
     private Item item;
     private SaleInfoDto saleInfo;
+    private CustomerRegister customerRegister;
 
 
 
@@ -47,8 +51,11 @@ public class View {
         printInfoDisplayTotal(saleInfoRegistrationDone);
 
         //exentuell customerId förfrågan
-        int customerId = 1234;
-        contr.checkCustomerId(customerId);
+        int id = 3;
+        String customerRegister = contr.checkCustomerId(id);
+        printCustomerId(customerRegister);
+
+
 
         //eventuellrabatt förfrågan
         double priceAfterDiscount = contr.requestDscount();
@@ -60,6 +67,11 @@ public class View {
         double change = contr.cashPayment(cashPayed);  // kanske borde så in customerID också  // item bara test så det ska fungera
 
         // kvitto för betalning skapad med detaljer
+    }
+
+    private void printCustomerId(String customerId){
+        System.out.println("customerId is found: " + customerId);
+   //     System.out.println("Customer register number is fund: " + customerRegister.cusromerInfo());
     }
 
     private void printInfoDisplay(SaleInfoDto saleInfo)
