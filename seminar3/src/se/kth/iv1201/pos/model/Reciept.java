@@ -1,9 +1,16 @@
 package se.kth.iv1201.pos.model;
 
 import se.kth.iv1201.pos.dto.SaleInfoDto;
-
 import java.lang.StringBuilder;
 import java.util.LinkedList;
+
+/**
+ * Denna klass representerar ett kvitto i försäljningen.
+ * @author Dariush Aghadai Ghaderi, darag@kth.se
+ * @author Simon Lagerqvist, simlag@kth.se
+ * @version 1.0
+ * @since 2018-05-06
+ */
 
 public class Reciept {
     private StringBuilder kvitto = new StringBuilder();
@@ -11,6 +18,11 @@ public class Reciept {
     private LinkedList<Item> items;
 
 
+
+    /**
+     * Skapar en ny kvitto
+     * @param saleInfoDto  denna klass inehåller informtion om affären.
+     */
 
 
    public Reciept(SaleInfoDto saleInfoDto){
@@ -28,6 +40,12 @@ public class Reciept {
     {
         return kvitto.toString();
     }
+
+    /**
+     * hämta kostnade från kvittot.
+     * @return kostnaden
+      */
+
 
     public double getCost()
     {

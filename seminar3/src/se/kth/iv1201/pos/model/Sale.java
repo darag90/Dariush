@@ -1,12 +1,19 @@
 package se.kth.iv1201.pos.model;
 
 import se.kth.iv1201.pos.dto.SaleInfoDto;
-
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ArrayList;
 
+
+/**
+ *  Denna klass representerar enförsälning. Den lagrar exempelvis de registrerade varorna
+ *  @author Dariush Aghadai Ghaderi, darag@kth.se
+ *  @author Simon Lagerqvist, simlag@kth.se
+ *  @version 1.9
+ *  @since 2018-05-06
+ */
 public class Sale
 {
     private final Date saleTime;
@@ -15,16 +22,26 @@ public class Sale
     private Item lastItem;
 
 
+    /**kontruktorn lagrar tiden när en försäljning startar*/
     public Sale()
     {
         this.saleTime = new Date();
     }
 
+    /**
+     * metoden returnerar den totala kostnaden, kostnaden beräknas alteftersom fler
+     * items registreras.
+     * @return den totala kostnaden för afären
+     */
     public int getTotalCost()
     {
         return totalCost;
     }
 
+    /**
+     *Denan metod hämtar en <code>SaleInfoDto</code> med information om försäljningen.
+     * @return en dto med information om den aktuella försäljningen
+     */
     public SaleInfoDto getSale()
     {
         //skapar en kopia för att få bra inkapsling
@@ -40,6 +57,10 @@ public class Sale
         return saleInfoDto;
     }
 
+    /**
+     * lägger till en ny vara/<code>item</code> i försälningen.
+     * @param item ett object som symboliserar en vara som man vill läga till i försäljningen.
+     */
     public void addItem(Item item)
     {
         this.lastItem = item;
@@ -66,32 +87,12 @@ public class Sale
 
     }
 
+    /**
+     * en <code>private</code> metod som andvänds för att beräkna den aktuella kostnaden.
+     */
     private void calulateTotalCost()
     {
-            totalCost += lastItem.getItemCost();//* listOfItems.get(0).getItemQuantity();//itemQuantity * Price
-    }
-
-
-  /*  public SaleInfo uppdateCost(int itemCost, int totalCost){
-
-        return new
-    } */
-
-
-    // random av valda item
-    public String[] randomItem(){
-        String[] strings1 = {};
-        String[] randomItem = {"milk", "bred", "egg", "chicken", "spaghetti"};
-        List<String> list = new ArrayList<>();
-
-        // add item to list
-        for (String i: randomItem)
-            list.add(i);
-
-        for (int i = 0; i < list.size(); i++){
-            System.out.printf("%S ", list.get(i));
-        }
-      return strings1;
+            totalCost += lastItem.getItemCost();
     }
 
 }

@@ -1,15 +1,34 @@
 package se.kth.iv1201.pos.model;
-
+/**
+ *
+ */
 
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ *  Represents a item that can be registred in a sale.
+ *  @author Dariush Aghadai Ghaderi, darag@kth.se
+ *  @author Simon Lagerqvist, simlag@kth.se
+ *  @version 1.8
+ *  @since 2018-05-06
+ */
 public class Item {
-    /*bör inte denna klass represnetera en vara då den heter item?*/
+
+    /**id number for the item*/
     private int idNumber;//streckkod
+    /**this represtns the name of an item*/
     private String itemName;//namn
     private int itemQuantity;
     private int itemCost;
+
+    /**
+     *This construcor creates a new <code>Item</code>. The id, cost/price and name of item should be specified.
+     * @param id the item identifier.
+     * @param itemCost the cost of the item.
+     * @param itemName the name of the item.
+     */
 
     public Item(int id, int itemCost, String itemName){
         this.itemCost = itemCost;
@@ -17,29 +36,43 @@ public class Item {
         this.itemName = itemName;
     }
 
+    /**
+     * hämtar id:t för item
+     * @return id för varan
+     */
 
     public int getItemId(){
         return idNumber;
     }
 
+    /**
+     * hämtar mängden av den varan som finns
+     * @return hur många gåner varan blivit registrerad.
+     */
     public int getItemQuantity(){
         return itemQuantity;
     }
+
+    /**
+     * ökar <code>itemQuantuty</code> med <code>1</code>
+     */
     public void increaseItemQuantity(){
        this.itemQuantity += 1;
     }
+    /** hämtar namnet på varan*/
     public String getItemName(){
         return itemName;
     }
 
+    /**hämtar priset på vararn*/
     public int getItemCost(){
         return itemCost;
     }
 
     /**
-     * jämför om två item av samma id finns
-     * @param object Item tittar om den önskade item finns
-     * @return boolean sant om lika falsk om inte
+     * jämför item med ett annat item för att se om de är samma.
+     * @param object det item man vill jämföra med.
+     * @return boolean returnerar true om det var man jämför med var samma, annars returneras false.
      */
 
     public boolean equals(Object object){
@@ -59,25 +92,4 @@ public class Item {
         return this.itemQuantity == item.getItemQuantity();
     }
 
-    /*@todo borde kanske flyttas till sale*/
-    public static class ItemList {
-        private int cost = 0;
-        private List<Item> list = new ArrayList<>();
-
-        public ItemList(){
-        }
-
-        public List<Item> getList(){
-            return list;
-        }
-
-        /**
-         * returnerar alla kostnader för item i lista
-         * @return kostnad
-         */
-        public int getCost(){
-            return cost;
-        }
-
-    }
 }
