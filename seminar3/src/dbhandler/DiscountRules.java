@@ -28,6 +28,6 @@ public class DiscountRules {
         double newPrice = (precent * totalCost);
         return  newPrice;
     }
-    
+
 
 }
