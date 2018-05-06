@@ -18,9 +18,6 @@ public class View {
         this.contr = contr;
     }
 
-  /*  public void Item(){
-        Item item= new Item();
-    } */
 
     public void sampleExecution() {
         /*Denna metod simulerar ett exempel på en försäljning*/

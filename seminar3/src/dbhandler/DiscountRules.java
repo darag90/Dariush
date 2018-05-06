@@ -14,8 +14,6 @@ public class DiscountRules {
 
 
     public DiscountRules(SaleInfoDto saleInfoDto){
-       // this.customerRegister = customerRegister;
-       // this.item = item;
         this.saleInfoDto = saleInfoDto;
 
     }

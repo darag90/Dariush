@@ -1,7 +1,6 @@
 package dbhandler;
 
 import dbhandler.ExternalSystem;
-import model.ItemList;
 import model.Printer;
 import model.PaymentController;
 
@@ -13,39 +12,9 @@ import java.util.List;
 
 public class CustomerRegister {
     private Printer printer = new Printer();
-  //  private int[] elements = null;
-  //  private DiscountRules discountRules = new DiscountRules();
     private DiscountRules discountRules;
-    private ItemList itemList = new ItemList();
     private ExternalSystem externalSystem = new ExternalSystem(printer);
     private PaymentController paymentController = new PaymentController(printer);
-    //private Controller controller = new Controller(externalSystem, paymentController);
-
-
-    /**
-     * skapar rabbat för kunden
-     */
-
-
-
-    /**
-     *  resultatet om kunden har rätt till räbbat eller inte kommer att raporteras
-     *  om CustomerID == true då kommer det bli godkänt annars blir det null
-     */
-  /*  public CustomerRegister getCustomerRegidter(int index, boolean result){
-        int customerID = itemList.getList().size() - 1;
-      //  int customerID = setCustomerList();
-        itemList.getList().get( - 1).equals(result);
-      //  int available = customerList();
-
-
-        if(customerID == index){
-            printResults();                                     // kanske inte behövs
-            return null;
-        }
-        return new CustomerRegister();
-    } */
-
 
 
 
@@ -86,7 +55,6 @@ public class CustomerRegister {
     }
 
 
-
     // lista över ett vald antal kunder
     public int customerList(){
         int newCustomer = 1;
@@ -106,39 +74,4 @@ public class CustomerRegister {
         return newCustomer;
 
     }
-
-
-
-
-
-  /*  public CustomerRegister()
-    {
-       // boolean customerList = (5 <= 1);
-      //  int customerList = 5;
-        boolean customerList = (5 <= 1);
-        boolean availableCustomerId = customerList.
-
-
-    } */
-
-
-
-
-    private void printResults(){
-       // printer.printReciept();
-      //  CustomerRegister customerRegister = new {CustomerRegister (Anders)};
-
-    }
-
-    /**
-     * Om kundens ID finns i registret
-     */
-
- /*   public boolean CustomerID(int discount, int precent){
-        int entityForDiscount = DiscountRules.
-
-    }  */
-
-
-
 }
