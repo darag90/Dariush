@@ -50,7 +50,8 @@ public class View {
         printInfoDisplayTotal(saleInfoRegistrationDone);
 
         //exentuell customerId förfrågan
-        contr.checkCustomerId();
+        int customerId = 1234;
+        contr.checkCustomerId(customerId);
 
         //eventuellrabatt förfrågan
         double priceAfterDiscount = contr.requestDscount();

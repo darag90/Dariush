@@ -53,7 +53,7 @@ public class Controller {
 
 
     // lagrar customerId
-    public void checkCustomerId()
+    public void checkCustomerId(int id)
     {
         this.customerRegister = new CustomerRegister();
         customerRegister.getinInfoOfcustomerId();
