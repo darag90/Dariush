@@ -1,8 +1,8 @@
 /* package controller;
 
-import dbhandler.ExternalSystem;
-import model.PaymentController;
-import model.Printer;
+import ExternalSystem;
+import PaymentController;
+import Printer;
 
 
 public class ControllerTest {
