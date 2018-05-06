@@ -4,7 +4,6 @@ package se.kth.iv1201.pos.dbhandler;
 import java.lang.String;
 import java.util.HashMap;
 
-
 /**
  * Denna klass har ansvar för att kontrollera kundens id
  * I denna klass finns också kunderna namne reggat

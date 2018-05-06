@@ -5,6 +5,13 @@ import se.kth.iv1201.pos.controller.Controller;
 import se.kth.iv1201.pos.dto.SaleInfoDto;
 import se.kth.iv1201.pos.model.Item;
 
+/**
+ *  Denna klass representerar view där det har med kassören att göra
+ *  @author Dariush Aghadai Ghaderi, darag@kth.se
+ *  @author Simon Lagerqvist, simlag@kth.se
+ *  @version 1.9
+ *  @since 2018-05-06
+ */
 
 public class View {
     private Controller contr;
@@ -12,18 +19,20 @@ public class View {
     private SaleInfoDto saleInfo;
 
 
-
-
+    /**
+     * Skapar en ny instans
+     * @param contr används för opperationer
+     */
     public View(Controller contr) {
         this.contr = contr;
     }
 
     /**
      * Denna metod simulerar ett exempel på en försäljning igentligen borde ett riktigt gui finnas här.
+     * med enkla ord, detta utför prov
      */
     public void sampleExecution()
     {
-
 
         //Starta försäljningen
         contr.startSale();
@@ -64,14 +73,20 @@ public class View {
         //slå in det betalda beloppet
         double change = contr.cashPayment(cashPayed);  // kanske borde så in customerID också  // item bara test så det ska fungera
 
-        // kvitto för betalning skapad med detaljer
     }
 
-    private void printCustomerId(String customerId)
-    {
+    /**
+     * Metoden visar kundens namne och anger om kunden är registerad eller inte
+     * @param customerId kundens namne presenteras
+     */
+    private void printCustomerId(String customerId){
         System.out.println("customerId is found: " + customerId);
     }
 
+    /**
+     * Metoden visar ut item, mängden, och den totala pricet
+     * @param saleInfo info om försäljningen
+     */
     private void printInfoDisplay(SaleInfoDto saleInfo)
     {
         System.out.println(saleInfo.getlastItem().getItemName() + " pris: " + saleInfo.getlastItem().getItemCost());
@@ -79,11 +94,20 @@ public class View {
         System.out.println("Total Price: " + saleInfo.getTotalCost());
         System.out.println();
     }
+
+    /**
+     * Metoden visar den nysa priset efter rabbat
+     * @param price nya priset
+     */
     private void printNewPriceAfterdiscount(double price)
     {
         System.out.println("new price after discount: " + price);
     }
 
+    /**
+     * Metoden visar den totala priset som måste betalas och även skatten
+     * @param saleInfo info om
+     */
     private void printInfoDisplayTotal(SaleInfoDto saleInfo)
     {
         System.out.println("Total price to pay: " + saleInfo.getTotalCost());

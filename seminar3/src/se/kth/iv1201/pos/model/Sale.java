@@ -3,8 +3,7 @@ package se.kth.iv1201.pos.model;
 import se.kth.iv1201.pos.dto.SaleInfoDto;
 import java.util.Date;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.ArrayList;
+
 
 
 /**

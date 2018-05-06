@@ -10,6 +10,15 @@ import se.kth.iv1201.pos.model.Item;
 import se.kth.iv1201.pos.model.PaymentController;
 import se.kth.iv1201.pos.model.Sale;
 
+
+/**
+ * Denna klass kontrollerar andra delar i vår system
+ * @author Dariush Aghadai Ghaderi, darag@kth.se
+ * @author Simon Lagerqvist, simlag@kth.se
+ * @version 1.9
+ * @since 2018-05-06
+ */
+
 public class Controller {
 
     private PaymentController paymentController;
@@ -20,6 +29,11 @@ public class Controller {
     private DiscountRules discountRules;
 
 
+    /**
+     * Skapar en ny instans
+     * @param externalSystem
+     * @param paymentController
+     */
 
     public Controller(ExternalSystem externalSystem, PaymentController paymentController)
     {
@@ -28,11 +42,19 @@ public class Controller {
 
     }
 
+    /**
+     * Metoden informerar om att en ny försäljning har startas
+     */
     public void startSale()
     {
         this.sale = new Sale();
     }
 
+    /**
+     * Metoden används för att slå in itemId
+     * @param id items id
+     * @return returnerar det item för försäljning
+     */
     public SaleInfoDto enterItemId(int id)
     {
         Item item = externalSystem.getItem(id);
@@ -44,14 +66,22 @@ public class Controller {
     }
 
 
-
+    /**
+     * Metoden används för att ansluta försäljningen
+     * @return returnerar att försäljningen är avslutad
+     */
     public SaleInfoDto endSale()
     {
         return sale.finishRegistration();
     }
 
 
-    // lagrar customerId
+
+    /**
+     * Metoden används för att controllera kundens id och lagrar det
+     * @param id kundens id
+     * @return returnerar kundens id
+     */
     public String checkCustomerId(int id)
     {
         this.customerRegister = new CustomerRegister();
@@ -59,6 +89,10 @@ public class Controller {
     }
 
 
+    /**
+     * Metoden används för rabbet för den totala kostnaden
+     * @return returnerar rabbaten
+     */
     public double requestDscount()
     {
         this.discountRules = new DiscountRules(sale.getSale());
@@ -66,15 +100,12 @@ public class Controller {
     }
 
     public void itemId(){
-        System.out.println("HEJ");
-        this.item = new Item(11,11, "j");
     }
 
 
     /**
      * Metoden för för betalning med kontanter och retur lämnas
      * @param cashAmount mängden kontanter som kunden ger
-     * @param item1 item som är till försäljning av den vara/varor kunden tar
      * @return kostnaden för hela köpet
      */
 
@@ -83,13 +114,6 @@ public class Controller {
         double change = paymentController.cashPayment(cashAmount, sale.getSale());     // måste fixa cashAmount, klagar på int
         return change;
     }
-
-
-
-
-
-
-
 
 }
 
