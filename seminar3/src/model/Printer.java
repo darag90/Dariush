@@ -18,11 +18,4 @@ public class Printer {
         System.out.println("Välkommen åter");
         System.out.println("------------------------------------");
     }
-
- /*   public void printOfItemList(Item list){
-        String listPrintout = list.resultToString(list);
-        System.out.println(listPrintout);
-    }  */
-
-
 }

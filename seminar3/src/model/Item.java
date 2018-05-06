@@ -11,31 +11,11 @@ public class Item {
     private int itemQuantity;
     private int itemCost;
 
-    private boolean result = false; // vad är syftet med denna?(Simon undrar) @todo tabort?
-
-
-  /*  public Item(int itemCost, String itemId, String itemQuantity){
-        this.itemCost = itemCost;
-        this.itemId = itemId;
-        this.itemQuantity = itemQuantity;
-    } @todo ta bort?*/
-
-
-
     public Item(int id, int itemCost, String itemName){
         this.itemCost = itemCost;
         this.idNumber = id;
         this.itemName = itemName;
     }
-
-//    public void QuantityItem(boolean result){
-//        this.result = result;
-//    }
-
-    // test
-  /*  public int getItemList(){
-        return  itemList;
-    } @todo ta bort?*/
 
 
     public int getItemId(){
@@ -102,39 +82,6 @@ public class Item {
         public int getCost(){
             return cost;
         }
-
-        /**
-         * lagrar item i en lista och uppdaterar kostnaden för hela lista
-         */
-
-   /*     public void itemDTO(Item item){//@todo ta bort?
-            list.add(item);
-            cost += item.getItemCost();
-        } */
-
-        /**
-         * tar en lista av valda item och returnerar en sträng som en lista
-         */
-
-        public String resultOfItemList (ItemList list) { //@todo tabort?
-            StringBuilder sb = new StringBuilder();
-            int len = list.getList().size();
-            for (int i = 0; i < len; i++) {
-                sb.append("item list");
-                sb.append(list.getList().get(i).getItemId());
-                if (list.getList().get(i).equals(list)) {               // osäker
-                    sb.append("Result: available itemId" + " ");
-                    sb.append("\n");
-                } else {
-                    sb.append("Result: itemId not available" + " ");
-                    sb.append("\n");
-                }
-
-            }
-            return sb.toString();
-        }
-
-
 
     }
 }

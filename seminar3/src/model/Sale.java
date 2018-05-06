@@ -4,7 +4,8 @@ import DTO.SaleInfoDto;
 
 import java.util.Date;
 import java.util.LinkedList;
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Sale
 {
@@ -12,8 +13,7 @@ public class Sale
     private LinkedList<Item> listOfItems = new LinkedList<Item>();
     private int totalCost;
     private Item lastItem;
-    private Item item = new Item(1,1,"df");
-    //private Item item = new Item();
+
 
     public Sale()
     {

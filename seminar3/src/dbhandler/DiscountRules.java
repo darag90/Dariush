@@ -14,8 +14,6 @@ public class DiscountRules {
 
 
     public DiscountRules(SaleInfoDto saleInfoDto){
-       // this.customerRegister = customerRegister;
-       // this.item = item;
         this.saleInfoDto = saleInfoDto;
 
     }
@@ -26,6 +24,7 @@ public class DiscountRules {
         double precent = 0.85;
         double totalCost = saleInfoDto.getTotalCost();
         double newPrice = (precent * totalCost);
+        saleInfoDto.setTotalCost(newPrice);
         return  newPrice;
     }
 
