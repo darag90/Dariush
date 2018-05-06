@@ -1,11 +1,6 @@
-package dbhandler;
+package se.kth.iv1201.pos.dbhandler;
 
-import DTO.SaleInfoDto;
-import dbhandler.CustomerRegister;
-import model.Item;
-import model.Sale;
-
-import java.util.List;
+import se.kth.iv1201.pos.dto.SaleInfoDto;
 
 
 public class DiscountRules {

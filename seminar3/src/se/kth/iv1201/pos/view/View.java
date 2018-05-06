@@ -1,13 +1,9 @@
-package view;
+package se.kth.iv1201.pos.view;
 
 
-import controller.Controller;
-import DTO.SaleInfoDto;
-import model.Reciept;
-import model.Item;
-import dbhandler.CustomerRegister;
-
-import java.util.HashMap;
+import se.kth.iv1201.pos.controller.Controller;
+import se.kth.iv1201.pos.dto.SaleInfoDto;
+import se.kth.iv1201.pos.model.Item;
 
 
 public class View {

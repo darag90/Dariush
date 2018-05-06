@@ -1,8 +1,9 @@
-package model;
+package se.kth.iv1201.pos.model;
 
-// import controller.Controller;
+// import Controller;
 
 
+import se.kth.iv1201.pos.dto.SaleInfoDto;
 
 public class PaymentController {
     private Printer printer;
@@ -27,7 +28,7 @@ public class PaymentController {
      * @return skickar tillbaka pengar till kunden om det skulle finnas växel kvar
      */
 
-    public double cashPayment(int cashAmount, DTO.SaleInfoDto saleInfoDto){
+    public double cashPayment(int cashAmount, SaleInfoDto saleInfoDto){
         Reciept reciept = new Reciept(saleInfoDto);
         printer.printReciept(reciept);
 

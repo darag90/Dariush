@@ -1,4 +1,6 @@
-package model;
+package se.kth.iv1201.pos.model;
+
+import se.kth.iv1201.pos.dto.SaleInfoDto;
 
 import java.lang.StringBuilder;
 import java.util.LinkedList;
@@ -17,7 +19,7 @@ public class Reciept {
      */
 
 
-   public Reciept(DTO.SaleInfoDto saleInfoDto){
+   public Reciept(SaleInfoDto saleInfoDto){
         cost = saleInfoDto.getTotalCost();
         items = saleInfoDto.getItems();
 

@@ -1,11 +1,11 @@
-package startup;
+package se.kth.iv1201.pos.startup;
 
 
-import controller.Controller;
-import dbhandler.ExternalSystem;
-import model.PaymentController;
-import model.Printer;
-import view.View;
+import se.kth.iv1201.pos.controller.Controller;
+import se.kth.iv1201.pos.dbhandler.ExternalSystem;
+import se.kth.iv1201.pos.model.PaymentController;
+import se.kth.iv1201.pos.model.Printer;
+import se.kth.iv1201.pos.view.View;
 
 
 public class Main

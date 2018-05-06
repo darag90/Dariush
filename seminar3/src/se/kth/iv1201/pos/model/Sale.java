@@ -1,6 +1,6 @@
-package model;
+package se.kth.iv1201.pos.model;
 
-import DTO.SaleInfoDto;
+import se.kth.iv1201.pos.dto.SaleInfoDto;
 
 import java.util.Date;
 import java.util.LinkedList;
@@ -24,6 +24,7 @@ public class Sale
     {
         return totalCost;
     }
+
     public SaleInfoDto getSale()
     {
         //skapar en kopia för att få bra inkapsling

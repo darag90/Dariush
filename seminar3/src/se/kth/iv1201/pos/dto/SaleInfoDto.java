@@ -1,6 +1,6 @@
-package DTO;
+package se.kth.iv1201.pos.dto;
 
-import model.Item;
+import se.kth.iv1201.pos.model.Item;
 import java.util.Date;
 
 import java.util.LinkedList;
@@ -25,6 +25,11 @@ public class SaleInfoDto
     public LinkedList getItems()
     {
         return listOfItems;
+    }
+
+    public Date getSaleTime()
+    {
+        return saleTime;
     }
 
 

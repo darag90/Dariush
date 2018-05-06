@@ -1,16 +1,14 @@
 
-package controller;
+package se.kth.iv1201.pos.controller;
 
 
-import dbhandler.DiscountRules;
-import dbhandler.ExternalSystem;
-import model.*;
-import DTO.SaleInfoDto;
-import dbhandler.CustomerRegister;
-import java.lang.String;
-import java.util.HashMap;
-
-import model.Sale;
+import se.kth.iv1201.pos.dbhandler.CustomerRegister;
+import se.kth.iv1201.pos.dbhandler.DiscountRules;
+import se.kth.iv1201.pos.dbhandler.ExternalSystem;
+import se.kth.iv1201.pos.dto.SaleInfoDto;
+import se.kth.iv1201.pos.model.Item;
+import se.kth.iv1201.pos.model.PaymentController;
+import se.kth.iv1201.pos.model.Sale;
 
 public class Controller {
 
@@ -18,7 +16,6 @@ public class Controller {
     private ExternalSystem externalSystem;
     private Sale sale;
     private Item item;
-    //private ItemList itemList = new ItemList();
     private CustomerRegister customerRegister;
     private DiscountRules discountRules;
 

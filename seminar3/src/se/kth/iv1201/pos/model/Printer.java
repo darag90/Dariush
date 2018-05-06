@@ -1,6 +1,4 @@
-package model;
-
-import model.Reciept;
+package se.kth.iv1201.pos.model;
 
 public class Printer {
 

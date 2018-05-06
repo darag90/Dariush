@@ -1,7 +1,7 @@
-package dbhandler;
+package se.kth.iv1201.pos.dbhandler;
 
 import java.util.*;
-import model.Item;
+import se.kth.iv1201.pos.model.Item;
 public class InventorySystem
 {
 /*Denna class borde igentligen kontakta det externa inveteringssystemet,
