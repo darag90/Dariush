@@ -67,9 +67,9 @@ public class View {
         // kvitto för betalning skapad med detaljer
     }
 
-    private void printCustomerId(String customerId){
+    private void printCustomerId(String customerId)
+    {
         System.out.println("customerId is found: " + customerId);
-   //     System.out.println("Customer register number is fund: " + customerRegister.cusromerInfo());
     }
 
     private void printInfoDisplay(SaleInfoDto saleInfo)

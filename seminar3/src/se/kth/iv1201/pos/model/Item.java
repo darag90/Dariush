@@ -89,7 +89,7 @@ public class Item {
             return false;
         }
 
-        return this.itemQuantity == item.getItemQuantity();
+        return this.itemName == item.getItemName();
     }
 
 }
