@@ -1,4 +1,4 @@
-package model;
+package se.kth.iv1201.pos.model;
 
 
 import java.util.ArrayList;
@@ -56,11 +56,7 @@ public class Item {
             return false;
         }
 
-        if (!(this.itemQuantity == item.getItemQuantity())){
-            return false;
-        }
-
-        return true;
+        return this.itemQuantity == item.getItemQuantity();
     }
 
     /*@todo borde kanske flyttas till sale*/

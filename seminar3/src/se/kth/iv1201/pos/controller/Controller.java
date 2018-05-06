@@ -2,12 +2,10 @@
 package se.kth.iv1201.pos.controller;
 
 
+import se.kth.iv1201.pos.dbhandler.CustomerRegister;
 import se.kth.iv1201.pos.dbhandler.DiscountRules;
 import se.kth.iv1201.pos.dbhandler.ExternalSystem;
-import model.*;
 import se.kth.iv1201.pos.dto.SaleInfoDto;
-import se.kth.iv1201.pos.dbhandler.CustomerRegister;
-
 import se.kth.iv1201.pos.model.Item;
 import se.kth.iv1201.pos.model.PaymentController;
 import se.kth.iv1201.pos.model.Sale;
@@ -18,7 +16,6 @@ public class Controller {
     private ExternalSystem externalSystem;
     private Sale sale;
     private Item item;
-    //private ItemList itemList = new ItemList();
     private CustomerRegister customerRegister;
     private DiscountRules discountRules;
 
