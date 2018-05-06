@@ -17,9 +17,12 @@ public class View {
         this.contr = contr;
     }
 
+    /**
+     * Denna metod simulerar ett exempel på en försäljning igentligen borde ett riktigt gui finnas här.
+     */
+    public void sampleExecution()
+    {
 
-    public void sampleExecution() {
-        /*Denna metod simulerar ett exempel på en försäljning*/
 
         //Starta försäljningen
         contr.startSale();
@@ -79,5 +82,7 @@ public class View {
         System.out.println("Of Which is tax: " + saleInfo.getTax());
         System.out.println();
     }
+
+    /*Observera att kvittot skrivs ut av printer*/
 }
 
