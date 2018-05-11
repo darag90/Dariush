@@ -2,9 +2,7 @@
 package se.kth.iv1201.pos.controller;
 
 
-import se.kth.iv1201.pos.dbhandler.CustomerRegister;
-import se.kth.iv1201.pos.dbhandler.DiscountRules;
-import se.kth.iv1201.pos.dbhandler.ExternalSystem;
+import se.kth.iv1201.pos.dbhandler.*;
 import se.kth.iv1201.pos.dto.SaleInfoDto;
 import se.kth.iv1201.pos.model.Item;
 import se.kth.iv1201.pos.model.PaymentController;
@@ -27,6 +25,7 @@ public class Controller {
     private Item item;
     private CustomerRegister customerRegister;
     private DiscountRules discountRules;
+    private InventorySystem inventorySystem;
 
 
     /**
@@ -34,14 +33,12 @@ public class Controller {
      * @param externalSystem
      * @param paymentController
      */
-
     public Controller(ExternalSystem externalSystem, PaymentController paymentController)
     {
         this.paymentController = paymentController;
         this.externalSystem = externalSystem;
 
     }
-
     /**
      * Metoden informerar om att en ny försäljning har startas
      */
@@ -75,8 +72,6 @@ public class Controller {
         return sale.finishRegistration();
     }
 
-
-
     /**
      * Metoden används för att controllera kundens id och lagrar det
      * @param id kundens id
@@ -87,7 +82,6 @@ public class Controller {
         this.customerRegister = new CustomerRegister();
         return customerRegister.getInfoOfCustomerId(id);
     }
-
 
     /**
      * Metoden används för rabbet för den totala kostnaden
@@ -111,9 +105,11 @@ public class Controller {
 
     public double cashPayment(int cashAmount)
     {
-        double change = paymentController.cashPayment(cashAmount, sale.getSale());     // måste fixa cashAmount, klagar på int
+        double change = paymentController.cashPayment(cashAmount, sale.getSale());
         return change;
     }
+
+
 
 }
 

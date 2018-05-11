@@ -1,7 +1,8 @@
+
 package se.kth.iv1201.pos.view;
 
-
 import se.kth.iv1201.pos.controller.Controller;
+import se.kth.iv1201.pos.dbhandler.InvalidItemException;
 import se.kth.iv1201.pos.dto.SaleInfoDto;
 import se.kth.iv1201.pos.model.Item;
 
@@ -71,7 +72,7 @@ public class View {
         int cashPayed = 180;
 
         //slå in det betalda beloppet
-        double change = contr.cashPayment(cashPayed);  // kanske borde så in customerID också  // item bara test så det ska fungera
+        double change = contr.cashPayment(cashPayed);
 
     }
 
@@ -87,6 +88,7 @@ public class View {
      * Metoden visar ut item, mängden, och den totala pricet
      * @param saleInfo info om försäljningen
      */
+
     private void printInfoDisplay(SaleInfoDto saleInfo)
     {
         System.out.println(saleInfo.getlastItem().getItemName() + " pris: " + saleInfo.getlastItem().getItemCost());
@@ -94,7 +96,6 @@ public class View {
         System.out.println("Total Price: " + saleInfo.getTotalCost());
         System.out.println();
     }
-
     /**
      * Metoden visar den nysa priset efter rabbat
      * @param price nya priset

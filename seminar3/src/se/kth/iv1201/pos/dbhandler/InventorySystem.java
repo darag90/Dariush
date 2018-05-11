@@ -37,4 +37,35 @@ kommer varoran vara inlagda som Item objekt från början.
     {
         return itemsInInventory.get(id);
     }
+
+
+
+    /**
+     * Metoden kontrollerar om den inskannade varan matchar den varan som
+     * finns i inventory system
+     * @param item vara
+     * @return returnerar om varan finns eller inte
+     */
+
+    private boolean match(int item){
+        int len = itemsInInventory.size();
+        for (int i = 0; i < len; i++){
+            if(itemsInInventory.get(i).equals(item)){
+                return true;
+            }
+        }
+        return false;
+    }
+    /**
+     * Metoden tar en item som ett argument och kontrollerar om varan finns registerad
+     * @param item tillgänglig vara
+     * @throws InvalidItemException undantag
+     */
+
+    public void matchItemIdentity(int item) throws InvalidItemException{
+        boolean match = match(item);
+        if (!(match)){
+            throw new InvalidItemException(item);
+        }
+    }
 }

@@ -1,6 +1,5 @@
 package se.kth.iv1201.pos.dbhandler;
 
-
 import java.lang.String;
 import java.util.HashMap;
 

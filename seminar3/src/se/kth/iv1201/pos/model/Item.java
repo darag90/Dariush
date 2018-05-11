@@ -1,11 +1,5 @@
+
 package se.kth.iv1201.pos.model;
-/**
- *
- */
-
-import java.util.ArrayList;
-import java.util.List;
-
 
 /**
  *  Represents a item that can be registred in a sale.
