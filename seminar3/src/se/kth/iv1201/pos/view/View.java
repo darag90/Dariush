@@ -3,6 +3,7 @@ package se.kth.iv1201.pos.view;
 
 import se.kth.iv1201.pos.controller.Controller;
 import se.kth.iv1201.pos.dbhandler.InvalidItemException;
+import se.kth.iv1201.pos.dbhandler.InventorySystem;
 import se.kth.iv1201.pos.dto.SaleInfoDto;
 import se.kth.iv1201.pos.model.Item;
 
@@ -18,6 +19,7 @@ public class View {
     private Controller contr;
     private Item item;
     private SaleInfoDto saleInfo;
+    private InventorySystem inventorySystem;
 
 
     /**
@@ -42,6 +44,8 @@ public class View {
         int itemIdGurka = 1234;
         int itemIdBanan = 5678;
         int itemIdTandkräm = 1357;
+        String itemGodis = "pasta";// denna är en item som inte har sitt id registerad
+    //    InventorySystem inventorySystem = new InventorySystem();
         contr.itemId();
 
         //lägg till tre varor i försälningen
@@ -53,6 +57,18 @@ public class View {
         printInfoDisplay(saleInfo);
         saleInfo = contr.enterItemId(itemIdTandkräm);
         printInfoDisplay(saleInfo);
+
+
+
+        // print out off search item
+        try {
+            String item = contr.getItemId(itemGodis);
+            System.out.println("Search item: " + item);
+        }
+        catch (InvalidItemException invalItem){
+            System.out.println(invalItem.getMessage());
+        }
+
 
 
         //slutför försäljningen
