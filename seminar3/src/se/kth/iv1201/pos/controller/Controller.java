@@ -26,6 +26,7 @@ public class Controller {
     private CustomerRegister customerRegister;
     private DiscountRules discountRules;
     private InventorySystem inventorySystem;
+  //  private ItemId itemId;
 
 
     /**
@@ -54,7 +55,7 @@ public class Controller {
      */
     public SaleInfoDto enterItemId(int id)
     {
-        Item item = externalSystem.getItem(id);
+       Item item = externalSystem.getItem(id);
         if(item != null)
         {
             sale.addItem(item);
@@ -93,8 +94,33 @@ public class Controller {
         return discountRules.DiscountInPrecent();
     }
 
+
     public void itemId(){
     }
+
+
+
+    public String getItemId(int id) throws InvalidItemException{
+
+       // this.itemId = new ItemId();
+      //  return itemId.matchItemId(id);
+        this.inventorySystem = new InventorySystem();
+        return inventorySystem.matchItemId(id);
+
+        //   inventorySystem.matchItemIdentity(id);
+     //   Item itemid = externalSystem.getItem(id);
+     //   return itemid;
+    }
+
+    /*  public int getItemId(int id) throws InvalidItemException{
+
+          this.externalSystem = new ExternalSystem(inventorySystem.matchItemIdentity(id));
+        // this.inventorySystem.matchItemIdentity();
+
+       //   inventorySystem.matchItemIdentity(id);
+       // Item itemid = externalSystem.getItem(id);
+      //  return itemid;
+    } */
 
 
     /**
@@ -108,7 +134,6 @@ public class Controller {
         double change = paymentController.cashPayment(cashAmount, sale.getSale());
         return change;
     }
-
 
 
 }

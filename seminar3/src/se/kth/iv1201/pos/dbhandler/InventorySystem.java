@@ -1,6 +1,8 @@
 package se.kth.iv1201.pos.dbhandler;
 
 import java.util.*;
+
+import se.kth.iv1201.pos.dto.SaleInfoDto;
 import se.kth.iv1201.pos.model.Item;
 public class InventorySystem
 {
@@ -39,33 +41,33 @@ kommer varoran vara inlagda som Item objekt från början.
     }
 
 
-
     /**
-     * Metoden kontrollerar om den inskannade varan matchar den varan som
+     * kontrollerar om den inskannade varan matchar den varan som
      * finns i inventory system
-     * @param item vara
-     * @return returnerar om varan finns eller inte
+     * @param id identifikationen för varan
+     * @return returnerar om varan finns i systemet eller inte
      */
 
-    private boolean match(int item){
-        int len = itemsInInventory.size();
-        for (int i = 0; i < len; i++){
-            if(itemsInInventory.get(i).equals(item)){
-                return true;
-            }
-        }
-        return false;
+    private boolean getInfoItem(int id){
+        Map availableItemId = itemsInInventory;
+        if (availableItemId.get(id)==null)
+            return false;
+        else
+            return true;
     }
+
     /**
      * Metoden tar en item som ett argument och kontrollerar om varan finns registerad
-     * @param item tillgänglig vara
+     * @param number tillgänglig nummer
      * @throws InvalidItemException undantag
      */
 
-    public void matchItemIdentity(int item) throws InvalidItemException{
-        boolean match = match(item);
+    public String matchItemId (int number) throws InvalidItemException{
+        boolean match = getInfoItem(number);
         if (!(match)){
-            throw new InvalidItemException(item);
+            throw new  InvalidItemException(number);
         }
+        return matchItemId(number);
     }
+
 }

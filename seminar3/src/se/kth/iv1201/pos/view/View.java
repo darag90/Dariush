@@ -44,7 +44,7 @@ public class View {
         int itemIdGurka = 1234;
         int itemIdBanan = 5678;
         int itemIdTandkräm = 1357;
-        String itemGodis = "pasta";// denna är en item som inte har sitt id registerad
+        Integer itemGodis = 0000;// denna är en item som inte har sitt id registerad
     //    InventorySystem inventorySystem = new InventorySystem();
         contr.itemId();
 
@@ -60,10 +60,10 @@ public class View {
 
 
 
-        // print out off search item
+        // print out off search item id
         try {
             String item = contr.getItemId(itemGodis);
-            System.out.println("Search item: " + item);
+            System.out.println("Search item id: " + item);
         }
         catch (InvalidItemException invalItem){
             System.out.println(invalItem.getMessage());
