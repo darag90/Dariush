@@ -1,7 +1,5 @@
 package se.kth.iv1201.pos.model;
 
-
-
 import se.kth.iv1201.pos.dto.SaleInfoDto;
 
 /**
@@ -41,7 +39,4 @@ public class PaymentController {
         System.out.println("Change: " + change);    //(debugg?)
         return change;
     }
-
-
-
 }

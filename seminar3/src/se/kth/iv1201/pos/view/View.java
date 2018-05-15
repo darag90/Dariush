@@ -1,7 +1,9 @@
+
 package se.kth.iv1201.pos.view;
 
-
 import se.kth.iv1201.pos.controller.Controller;
+import se.kth.iv1201.pos.dbhandler.InvalidItemException;
+import se.kth.iv1201.pos.dbhandler.InventorySystem;
 import se.kth.iv1201.pos.dto.SaleInfoDto;
 import se.kth.iv1201.pos.model.Item;
 
@@ -17,6 +19,7 @@ public class View {
     private Controller contr;
     private Item item;
     private SaleInfoDto saleInfo;
+    private InventorySystem inventorySystem;
 
 
     /**
@@ -41,6 +44,8 @@ public class View {
         int itemIdGurka = 1234;
         int itemIdBanan = 5678;
         int itemIdTandkräm = 1357;
+        Integer itemGodis = 0000;// denna är en item som inte har sitt id registerad
+    //    InventorySystem inventorySystem = new InventorySystem();
         contr.itemId();
 
         //lägg till tre varor i försälningen
@@ -52,6 +57,18 @@ public class View {
         printInfoDisplay(saleInfo);
         saleInfo = contr.enterItemId(itemIdTandkräm);
         printInfoDisplay(saleInfo);
+
+
+
+        // print out off search item id
+        try {
+            String item = contr.getItemId(itemGodis);
+            System.out.println("Search item id: " + item);
+        }
+        catch (InvalidItemException invalItem){
+            System.out.println(invalItem.getMessage());
+        }
+
 
 
         //slutför försäljningen
@@ -71,7 +88,7 @@ public class View {
         int cashPayed = 180;
 
         //slå in det betalda beloppet
-        double change = contr.cashPayment(cashPayed);  // kanske borde så in customerID också  // item bara test så det ska fungera
+        double change = contr.cashPayment(cashPayed);
 
     }
 
@@ -87,6 +104,7 @@ public class View {
      * Metoden visar ut item, mängden, och den totala pricet
      * @param saleInfo info om försäljningen
      */
+
     private void printInfoDisplay(SaleInfoDto saleInfo)
     {
         System.out.println(saleInfo.getlastItem().getItemName() + " pris: " + saleInfo.getlastItem().getItemCost());
@@ -94,7 +112,6 @@ public class View {
         System.out.println("Total Price: " + saleInfo.getTotalCost());
         System.out.println();
     }
-
     /**
      * Metoden visar den nysa priset efter rabbat
      * @param price nya priset

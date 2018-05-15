@@ -2,9 +2,7 @@
 package se.kth.iv1201.pos.controller;
 
 
-import se.kth.iv1201.pos.dbhandler.CustomerRegister;
-import se.kth.iv1201.pos.dbhandler.DiscountRules;
-import se.kth.iv1201.pos.dbhandler.ExternalSystem;
+import se.kth.iv1201.pos.dbhandler.*;
 import se.kth.iv1201.pos.dto.SaleInfoDto;
 import se.kth.iv1201.pos.model.Item;
 import se.kth.iv1201.pos.model.PaymentController;
@@ -27,6 +25,8 @@ public class Controller {
     private Item item;
     private CustomerRegister customerRegister;
     private DiscountRules discountRules;
+    private InventorySystem inventorySystem;
+  //  private ItemId itemId;
 
 
     /**
@@ -34,14 +34,12 @@ public class Controller {
      * @param externalSystem
      * @param paymentController
      */
-
     public Controller(ExternalSystem externalSystem, PaymentController paymentController)
     {
         this.paymentController = paymentController;
         this.externalSystem = externalSystem;
 
     }
-
     /**
      * Metoden informerar om att en ny försäljning har startas
      */
@@ -57,7 +55,7 @@ public class Controller {
      */
     public SaleInfoDto enterItemId(int id)
     {
-        Item item = externalSystem.getItem(id);
+       Item item = externalSystem.getItem(id);
         if(item != null)
         {
             sale.addItem(item);
@@ -75,8 +73,6 @@ public class Controller {
         return sale.finishRegistration();
     }
 
-
-
     /**
      * Metoden används för att controllera kundens id och lagrar det
      * @param id kundens id
@@ -88,7 +84,6 @@ public class Controller {
         return customerRegister.getInfoOfCustomerId(id);
     }
 
-
     /**
      * Metoden används för rabbet för den totala kostnaden
      * @return returnerar rabbaten
@@ -99,8 +94,33 @@ public class Controller {
         return discountRules.DiscountInPrecent();
     }
 
+
     public void itemId(){
     }
+
+
+
+    public String getItemId(int id) throws InvalidItemException{
+
+       // this.itemId = new ItemId();
+      //  return itemId.matchItemId(id);
+        this.inventorySystem = new InventorySystem();
+        return inventorySystem.matchItemId(id);
+
+        //   inventorySystem.matchItemIdentity(id);
+     //   Item itemid = externalSystem.getItem(id);
+     //   return itemid;
+    }
+
+    /*  public int getItemId(int id) throws InvalidItemException{
+
+          this.externalSystem = new ExternalSystem(inventorySystem.matchItemIdentity(id));
+        // this.inventorySystem.matchItemIdentity();
+
+       //   inventorySystem.matchItemIdentity(id);
+       // Item itemid = externalSystem.getItem(id);
+      //  return itemid;
+    } */
 
 
     /**
@@ -111,9 +131,10 @@ public class Controller {
 
     public double cashPayment(int cashAmount)
     {
-        double change = paymentController.cashPayment(cashAmount, sale.getSale());     // måste fixa cashAmount, klagar på int
+        double change = paymentController.cashPayment(cashAmount, sale.getSale());
         return change;
     }
+
 
 }
 

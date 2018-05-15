@@ -46,7 +46,6 @@ public class Reciept {
      * @return kostnaden
       */
 
-
     public double getCost()
     {
         return cost;

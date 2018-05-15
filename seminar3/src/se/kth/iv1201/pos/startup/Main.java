@@ -1,5 +1,5 @@
-package se.kth.iv1201.pos.startup;
 
+package se.kth.iv1201.pos.startup;
 
 import se.kth.iv1201.pos.controller.Controller;
 import se.kth.iv1201.pos.dbhandler.ExternalSystem;

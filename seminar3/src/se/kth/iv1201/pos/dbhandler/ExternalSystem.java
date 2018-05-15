@@ -1,8 +1,6 @@
 
 package se.kth.iv1201.pos.dbhandler;
 
-
-
 import se.kth.iv1201.pos.model.Printer;
 import se.kth.iv1201.pos.model.Item;
 

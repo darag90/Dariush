@@ -1,5 +1,6 @@
 package se.kth.iv1201.pos.model;
 
+import se.kth.iv1201.pos.dbhandler.InvalidItemException;
 import se.kth.iv1201.pos.dto.SaleInfoDto;
 import java.util.Date;
 import java.util.LinkedList;
@@ -75,17 +76,13 @@ public class Sale
                 break;
             }
         }
-
-
         if (!itemAlredyExist)
         {
             item.increaseItemQuantity();
             this.listOfItems.add(item);
         }
         calulateTotalCost();
-
     }
-
     /**
      * en <code>private</code> metod som andvänds för att beräkna den aktuella kostnaden.
      */
@@ -93,5 +90,4 @@ public class Sale
     {
             totalCost += lastItem.getItemCost();
     }
-
 }

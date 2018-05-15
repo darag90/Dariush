@@ -1,6 +1,8 @@
 package se.kth.iv1201.pos.dbhandler;
 
 import java.util.*;
+
+import se.kth.iv1201.pos.dto.SaleInfoDto;
 import se.kth.iv1201.pos.model.Item;
 public class InventorySystem
 {
@@ -28,7 +30,6 @@ kommer varoran vara inlagda som Item objekt från början.
         this.itemsInInventory.put( 1357, new Item(1234,60,"tandkräm oral-b") );
     }
 
-
     /**
      * en metod för att hämta information om varorna
      * @param id items id
@@ -38,4 +39,35 @@ kommer varoran vara inlagda som Item objekt från början.
     {
         return itemsInInventory.get(id);
     }
+
+
+    /**
+     * kontrollerar om den inskannade varan matchar den varan som
+     * finns i inventory system
+     * @param id identifikationen för varan
+     * @return returnerar om varan finns i systemet eller inte
+     */
+
+    private boolean getInfoItem(int id){
+        Map availableItemId = itemsInInventory;
+        if (availableItemId.get(id)==null)
+            return false;
+        else
+            return true;
+    }
+
+    /**
+     * Metoden tar en item som ett argument och kontrollerar om varan finns registerad
+     * @param number tillgänglig nummer
+     * @throws InvalidItemException undantag
+     */
+
+    public String matchItemId (int number) throws InvalidItemException{
+        boolean match = getInfoItem(number);
+        if (!(match)){
+            throw new  InvalidItemException(number);
+        }
+        return matchItemId(number);
+    }
+
 }

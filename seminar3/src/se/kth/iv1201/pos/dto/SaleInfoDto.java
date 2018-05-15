@@ -2,7 +2,6 @@ package se.kth.iv1201.pos.dto;
 
 import se.kth.iv1201.pos.model.Item;
 import java.util.Date;
-
 import java.util.LinkedList;
 
 public class SaleInfoDto
