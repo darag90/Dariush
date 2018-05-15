@@ -44,7 +44,7 @@ public class View {
         int itemIdGurka = 1234;
         int itemIdBanan = 5678;
         int itemIdTandkräm = 1357;
-        Integer itemGodis = 0000;// denna är en item som inte har sitt id registerad
+        Integer itemGodis = 0000;  /** denna är en item som inte har sitt id registerad */
     //    InventorySystem inventorySystem = new InventorySystem();
         contr.itemId();
 
