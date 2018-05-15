@@ -48,18 +48,28 @@ public class View {
         int itemIdBanan = 5678;
         int itemIdTandkräm = 1357;
         Integer itemGodis = 0000;// denna är en item som inte har sitt id registerad
-    //    InventorySystem inventorySystem = new InventorySystem();
-        contr.itemId();
+
+
 
         //lägg till tre varor i försälningen
-        saleInfo = contr.enterItemId(itemIdGurka);
-        printInfoDisplay(saleInfo);
-        saleInfo = contr.enterItemId(itemIdBanan);
-        printInfoDisplay(saleInfo);
-        saleInfo = contr.enterItemId(itemIdGurka);
-        printInfoDisplay(saleInfo);
-        saleInfo = contr.enterItemId(itemIdTandkräm);
-        printInfoDisplay(saleInfo);
+
+
+        try
+        {
+            saleInfo = contr.enterItemId(itemGodis);
+            System.out.println("Search item id: " + item);
+            printInfoDisplay(saleInfo);
+        }
+        catch (InvalidItemException invalItem)
+        {
+            errorMessageHandler.showErrorMsg(invalItem.getMessage());
+        }
+//        saleInfo = contr.enterItemId(itemIdBanan);
+//        printInfoDisplay(saleInfo);
+//        saleInfo = contr.enterItemId(itemIdGurka);
+//        printInfoDisplay(saleInfo);
+//        saleInfo = contr.enterItemId(itemIdTandkräm);
+//        printInfoDisplay(saleInfo);
 
 
 

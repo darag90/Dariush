@@ -35,9 +35,9 @@ kommer varoran vara inlagda som Item objekt från början.
      * @param id items id
      * @return returnera varans id
      */
-    public Item getItem (int id)
+    public Item getItem (int id)throws InvalidItemException
     {
-        return itemsInInventory.get(id);
+        return matchItemId(id);
     }
 
 
@@ -49,11 +49,8 @@ kommer varoran vara inlagda som Item objekt från början.
      */
 
     private boolean getInfoItem(int id){
-        Map availableItemId = itemsInInventory;
-        if (availableItemId.get(id)==null)
-            return false;
-        else
-            return true;
+        //Map availableItemId = itemsInInventory;
+        return itemsInInventory.get(id) != null;
     }
 
     /**
@@ -62,12 +59,12 @@ kommer varoran vara inlagda som Item objekt från början.
      * @throws InvalidItemException undantag
      */
 
-    public String matchItemId (int number) throws InvalidItemException{
+    public Item matchItemId (int number) throws InvalidItemException{
         boolean match = getInfoItem(number);
         if (!(match)){
             throw new  InvalidItemException(number);
         }
-        return matchItemId(number);
+        return itemsInInventory.get(number);
     }
 
 }

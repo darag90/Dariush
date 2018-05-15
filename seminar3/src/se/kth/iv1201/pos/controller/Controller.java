@@ -53,7 +53,7 @@ public class Controller {
      * @param id items id
      * @return returnerar det item för försäljning
      */
-    public SaleInfoDto enterItemId(int id)
+    public SaleInfoDto enterItemId(int id)throws InvalidItemException
     {
        Item item = externalSystem.getItem(id);
         if(item != null)
@@ -95,8 +95,7 @@ public class Controller {
     }
 
 
-    public void itemId(){
-    }
+
 
 
 
@@ -105,22 +104,10 @@ public class Controller {
        // this.itemId = new ItemId();
       //  return itemId.matchItemId(id);
         this.inventorySystem = new InventorySystem();
-        return inventorySystem.matchItemId(id);
-
-        //   inventorySystem.matchItemIdentity(id);
-     //   Item itemid = externalSystem.getItem(id);
-     //   return itemid;
+        return inventorySystem.matchItemId(id).getItemName();
     }
 
-    /*  public int getItemId(int id) throws InvalidItemException{
 
-          this.externalSystem = new ExternalSystem(inventorySystem.matchItemIdentity(id));
-        // this.inventorySystem.matchItemIdentity();
-
-       //   inventorySystem.matchItemIdentity(id);
-       // Item itemid = externalSystem.getItem(id);
-      //  return itemid;
-    } */
 
 
     /**
