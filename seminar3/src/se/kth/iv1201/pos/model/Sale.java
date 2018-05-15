@@ -67,7 +67,7 @@ public class Sale
         for (Item currentItem : listOfItems)
         {
             itemAlredyExist = currentItem.equals(item);
-            System.out.println(itemAlredyExist);
+            //System.out.println(itemAlredyExist);
             if(itemAlredyExist)
             {
                 lastItem = currentItem;

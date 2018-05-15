@@ -39,19 +39,4 @@ public class ExternalSystem {
         return inventorySystem.getItem(id);
     }
 
-
-
-
-
-
-
-
-
-
-
- /*   public Authorization InformationSystem(int itemCost, String itemList){
-        return
-    } */
-
-
 }
