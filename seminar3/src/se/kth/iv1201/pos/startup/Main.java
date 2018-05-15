@@ -6,6 +6,7 @@ import se.kth.iv1201.pos.dbhandler.ExternalSystem;
 import se.kth.iv1201.pos.model.PaymentController;
 import se.kth.iv1201.pos.model.Printer;
 import se.kth.iv1201.pos.view.View;
+import se.kth.iv1201.pos.view.ErrorMessageHandler;
 
 /**
  * Main start programmet.
@@ -20,15 +21,15 @@ public class Main
      */
     public static void main(String[] args)
     {
-        /**denna metod startar programmet och delar ut nödvöndiga referenser*/
-
+        /*denna metod startar programmet och delar ut nödvöndiga referenser*/
         Printer printer = new Printer();
         PaymentController paymentController = new PaymentController(printer);
         ExternalSystem externalSystem = new ExternalSystem(printer);
         Controller contr = new Controller(externalSystem, paymentController);
-        View view = new View(contr);
+        ErrorMessageHandler errorMessageHandler = new ErrorMessageHandler();
+        View view = new View(contr, errorMessageHandler);
 
-        /**starta exempel exikveringen av programmet*/
+        /*starta exempel exikveringen av programmet*/
         view.sampleExecution();
     }
 }
