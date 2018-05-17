@@ -49,8 +49,9 @@ public class View {
         int itemIdTandkräm = 1357;
         Integer itemGodis = 0000;// denna är en item som inte har sitt id registerad
 
+        //lägg till displayen som en observatör
 
-
+        contr.addRentalObserver(new TotalRevenueView());
         //lägg till tre varor i försälningen
 
 

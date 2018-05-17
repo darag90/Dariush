@@ -35,8 +35,10 @@ public class PaymentController {
         Reciept reciept = new Reciept(saleInfoDto);
         printer.printReciept(reciept);
 
+
         double change = cashAmount - saleInfoDto.getTotalCost();
         System.out.println("Change: " + change);    //(debugg?)
         return change;
+
     }
 }

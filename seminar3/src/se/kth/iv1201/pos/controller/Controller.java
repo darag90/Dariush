@@ -5,6 +5,7 @@ package se.kth.iv1201.pos.controller;
 import se.kth.iv1201.pos.dbhandler.*;
 import se.kth.iv1201.pos.dto.SaleInfoDto;
 import se.kth.iv1201.pos.model.Item;
+import se.kth.iv1201.pos.model.Observer;
 import se.kth.iv1201.pos.model.PaymentController;
 import se.kth.iv1201.pos.model.Sale;
 
@@ -96,7 +97,10 @@ public class Controller {
 
 
 
-
+    public void addRentalObserver(Observer totalRevenueObserver)
+    {
+        sale.addRentalObserver(totalRevenueObserver);
+    }
 
 
     public String getItemId(int id) throws InvalidItemException{
@@ -119,6 +123,7 @@ public class Controller {
     public double cashPayment(int cashAmount)
     {
         double change = paymentController.cashPayment(cashAmount, sale.getSale());
+        sale.notifyObservers();
         return change;
     }
 

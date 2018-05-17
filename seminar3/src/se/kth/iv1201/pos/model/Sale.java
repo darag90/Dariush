@@ -4,9 +4,10 @@ import se.kth.iv1201.pos.dbhandler.InvalidItemException;
 import se.kth.iv1201.pos.dto.SaleInfoDto;
 
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
-
+import java.util.List;
 
 
 /**
@@ -22,6 +23,7 @@ public class Sale
     private LinkedList<Item> listOfItems = new LinkedList<Item>();
     private int totalCost;
     private Item lastItem;
+    private List<Observer> saleObservers = new ArrayList<>();
 
 
 
@@ -40,6 +42,23 @@ public class Sale
     public int getTotalCost()
     {
         return totalCost;
+    }
+
+
+
+    public void notifyObservers()
+    {
+        for (Observer obs : saleObservers)
+        {
+            obs.notify(getTotalCost());
+        }
+    }
+
+
+
+    public void addRentalObserver(Observer obs)
+    {
+        saleObservers.add(obs);
     }
 
     /**
