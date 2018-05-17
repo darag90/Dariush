@@ -1,6 +1,7 @@
 
 package se.kth.iv1201.pos.view;
 
+import com.sun.jmx.snmp.EnumRowStatus;
 import se.kth.iv1201.pos.controller.Controller;
 import se.kth.iv1201.pos.dbhandler.InvalidItemException;
 import se.kth.iv1201.pos.dbhandler.InventorySystem;
@@ -20,14 +21,16 @@ public class View {
     private Item item;
     private SaleInfoDto saleInfo;
     private InventorySystem inventorySystem;
+    private ErrorMessageHandler errorMessageHandler;
 
 
     /**
      * Skapar en ny instans
      * @param contr används för opperationer
      */
-    public View(Controller contr) {
+    public View(Controller contr, ErrorMessageHandler errorMsg) {
         this.contr = contr;
+        this.errorMessageHandler = errorMsg;
     }
 
     /**
@@ -44,19 +47,34 @@ public class View {
         int itemIdGurka = 1234;
         int itemIdBanan = 5678;
         int itemIdTandkräm = 1357;
-        Integer itemGodis = 0000;  /** denna är en item som inte har sitt id registerad */
-    //    InventorySystem inventorySystem = new InventorySystem();
-        contr.itemId();
+        Integer itemGodis = 0000;// denna är en item som inte har sitt id registerad
+
+
 
         //lägg till tre varor i försälningen
-        saleInfo = contr.enterItemId(itemIdGurka);
-        printInfoDisplay(saleInfo);
-        saleInfo = contr.enterItemId(itemIdBanan);
-        printInfoDisplay(saleInfo);
-        saleInfo = contr.enterItemId(itemIdGurka);
-        printInfoDisplay(saleInfo);
-        saleInfo = contr.enterItemId(itemIdTandkräm);
-        printInfoDisplay(saleInfo);
+
+
+        try
+        {
+            saleInfo = contr.enterItemId(itemIdBanan);
+          //  System.out.println("Search item id: " + item);
+            printInfoDisplay(saleInfo);
+            saleInfo = contr.enterItemId(itemIdGurka);
+            printInfoDisplay(saleInfo);
+            saleInfo = contr.enterItemId(itemIdTandkräm);
+            printInfoDisplay(saleInfo);
+
+        }
+        catch (InvalidItemException invalItem)
+        {
+            errorMessageHandler.showErrorMsg(invalItem.getMessage());
+        }
+//        saleInfo = contr.enterItemId(itemIdBanan);
+//        printInfoDisplay(saleInfo);
+//        saleInfo = contr.enterItemId(itemIdGurka);
+//        printInfoDisplay(saleInfo);
+//        saleInfo = contr.enterItemId(itemIdTandkräm);
+//        printInfoDisplay(saleInfo);
 
 
 
@@ -66,7 +84,7 @@ public class View {
             System.out.println("Search item id: " + item);
         }
         catch (InvalidItemException invalItem){
-            System.out.println(invalItem.getMessage());
+            errorMessageHandler.showErrorMsg(invalItem.getMessage());
         }
 
 

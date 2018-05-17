@@ -2,6 +2,8 @@ package se.kth.iv1201.pos.model;
 
 import se.kth.iv1201.pos.dbhandler.InvalidItemException;
 import se.kth.iv1201.pos.dto.SaleInfoDto;
+
+
 import java.util.Date;
 import java.util.LinkedList;
 
@@ -20,6 +22,8 @@ public class Sale
     private LinkedList<Item> listOfItems = new LinkedList<Item>();
     private int totalCost;
     private Item lastItem;
+
+
 
 
     /**kontruktorn lagrar tiden när en försäljning startar*/
@@ -68,7 +72,7 @@ public class Sale
         for (Item currentItem : listOfItems)
         {
             itemAlredyExist = currentItem.equals(item);
-            System.out.println(itemAlredyExist);
+            //System.out.println(itemAlredyExist);
             if(itemAlredyExist)
             {
                 lastItem = currentItem;
@@ -86,8 +90,12 @@ public class Sale
     /**
      * en <code>private</code> metod som andvänds för att beräkna den aktuella kostnaden.
      */
-    private void calulateTotalCost()
+
+
+    /** gjorde ändring här*/
+   private void calulateTotalCost()
     {
             totalCost += lastItem.getItemCost();
     }
+
 }

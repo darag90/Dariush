@@ -33,10 +33,10 @@ public class ItemId {
             return true;
     }
 
-    public String matchItemId (int number) throws InvalidItemException{
+    public String matchItemId (int number) throws DatabaseErrorException{
         boolean match = getInfoItem(number);
         if (!(match)){
-            throw new  InvalidItemException(number);
+            throw new  DatabaseErrorException(number);
         }
         return matchItemId(number);
     }

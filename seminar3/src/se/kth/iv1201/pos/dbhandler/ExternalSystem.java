@@ -33,23 +33,9 @@ public class ExternalSystem {
      * @return reurnerar det bestämda item id
      */
 
-    public Item getItem(int id){
+    public Item getItem(int id)throws InvalidItemException{
         return inventorySystem.getItem(id);
+
     }
-
-
-
-
-
-
-
-
-
-
-
- /*   public Authorization InformationSystem(int itemCost, String itemList){
-        return
-    } */
-
 
 }
