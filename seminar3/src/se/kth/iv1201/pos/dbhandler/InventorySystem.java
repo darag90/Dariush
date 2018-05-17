@@ -35,7 +35,7 @@ kommer varoran vara inlagda som Item objekt från början.
      * @param id items id
      * @return returnera varans id
      */
-    public Item getItem (int id)throws InvalidItemException
+    public Item getItem (int id)throws InvalidItemException, DatabaseErrorException
     {
         return matchItemId(id);
     }
@@ -61,12 +61,18 @@ kommer varoran vara inlagda som Item objekt från början.
      * @throws InvalidItemException undantag
      */
 
-    public Item matchItemId (int number) throws InvalidItemException{
+    public Item matchItemId (int number) throws InvalidItemException, DatabaseErrorException
+    {
         boolean match = getInfoItem(number);
-        if (!(match)){
+
+        if(number == 2222)
+            throw new DatabaseErrorException(number);
+        else if (!(match))
             throw new  InvalidItemException(number);
-        }
-        return itemsInInventory.get(number);
+        else if(number == 2222)
+            throw new DatabaseErrorException(number);
+        else
+            return itemsInInventory.get(number);
     }
 
 }

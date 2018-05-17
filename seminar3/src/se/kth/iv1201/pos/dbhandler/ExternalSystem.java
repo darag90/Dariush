@@ -33,7 +33,7 @@ public class ExternalSystem {
      * @return reurnerar det bestämda item id
      */
 
-    public Item getItem(int id)throws InvalidItemException{
+    public Item getItem(int id)throws InvalidItemException, DatabaseErrorException{
         return inventorySystem.getItem(id);
 
     }
