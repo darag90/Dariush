@@ -56,6 +56,7 @@ public class Controller {
      */
     public SaleInfoDto enterItemId(int id)throws InvalidItemException
     {
+
        Item item = externalSystem.getItem(id);
         if(item != null)
         {

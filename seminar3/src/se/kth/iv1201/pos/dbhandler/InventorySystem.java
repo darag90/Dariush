@@ -54,7 +54,6 @@ kommer varoran vara inlagda som Item objekt från början.
     }
 
 
-
     /**
      * Metoden tar en item som ett argument och kontrollerar om varan finns registerad
      * @param number tillgänglig nummer

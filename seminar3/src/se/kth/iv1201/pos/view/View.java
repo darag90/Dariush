@@ -47,7 +47,7 @@ public class View {
         int itemIdGurka = 1234;
         int itemIdBanan = 5678;
         int itemIdTandkräm = 1357;
-        Integer itemGodis = 0000;// denna är en item som inte har sitt id registerad
+        Integer itemGodis = 0000;  /** denna är en item som inte har sitt id registerad */
 
         //lägg till displayen som en observatör
 
@@ -58,36 +58,19 @@ public class View {
         try
         {
             saleInfo = contr.enterItemId(itemIdBanan);
-          //  System.out.println("Search item id: " + item);
             printInfoDisplay(saleInfo);
             saleInfo = contr.enterItemId(itemIdGurka);
             printInfoDisplay(saleInfo);
             saleInfo = contr.enterItemId(itemIdTandkräm);
             printInfoDisplay(saleInfo);
+            String item = contr.getItemId(itemGodis);
+            System.out.println("Search item id: " + item);
 
         }
         catch (InvalidItemException invalItem)
         {
             errorMessageHandler.showErrorMsg(invalItem.getMessage());
         }
-//        saleInfo = contr.enterItemId(itemIdBanan);
-//        printInfoDisplay(saleInfo);
-//        saleInfo = contr.enterItemId(itemIdGurka);
-//        printInfoDisplay(saleInfo);
-//        saleInfo = contr.enterItemId(itemIdTandkräm);
-//        printInfoDisplay(saleInfo);
-
-
-
-        // print out off search item id
-        try {
-            String item = contr.getItemId(itemGodis);
-            System.out.println("Search item id: " + item);
-        }
-        catch (InvalidItemException invalItem){
-            errorMessageHandler.showErrorMsg(invalItem.getMessage());
-        }
-
 
 
         //slutför försäljningen
