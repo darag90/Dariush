@@ -3,6 +3,7 @@ package se.kth.iv1201.pos.view;
 
 import com.sun.jmx.snmp.EnumRowStatus;
 import se.kth.iv1201.pos.controller.Controller;
+import se.kth.iv1201.pos.controller.OperationFailedException;
 import se.kth.iv1201.pos.dbhandler.DatabaseErrorException;
 import se.kth.iv1201.pos.dbhandler.InvalidItemException;
 import se.kth.iv1201.pos.dbhandler.InventorySystem;
@@ -82,10 +83,10 @@ public class View {
             logHandler.logException(invalItem);
 
         }
-        catch (DatabaseErrorException dataBase)
+        catch (OperationFailedException opFail)
         {
-            errorMessageHandler.showErrorMsg("Database exception");
-            logHandler.logException(dataBase);
+            errorMessageHandler.showErrorMsg("fail");
+            logHandler.logException(opFail);
         }
 //        saleInfo = contr.enterItemId(itemIdBanan);
 //        printInfoDisplay(saleInfo);
