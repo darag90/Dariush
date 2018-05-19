@@ -46,7 +46,7 @@ public class View {
 
         //Starta försäljningen
         contr.startSale();
-
+        contr.addRentalObserver(new TotalRevenueView());
         //Skapa tre st nya id:n som egentligen skulle slagits in av kassören
 //        int itemIdGurka = 1234;
 //        int itemIdBanan = 5678;
@@ -56,8 +56,17 @@ public class View {
 
         //lägg till displayen som en observatör
 
-        contr.addRentalObserver(new TotalRevenueView());
+
         //lägg till tre varor i försälningen
+
+
+        /*Skapa tre st nya id:n som egentligen skulle slagits in av kassören
+        * itemIdGurka = 1234;
+        * itemIdBanan = 5678;
+        * itemIdTandkräm = 1357;
+        * itemGodis = 0000;// denna är en item som inte har sitt id registerad
+        * itemThatCousesDataBaseException = 2222;// en vara som åstakommer ett database exception
+        * */
 
         int[] items ={1234,5678,1357,0000,2222};
 
@@ -67,7 +76,7 @@ public class View {
                 printInfoDisplay(saleInfo);
             }
             catch (InvalidItemException invalItem) {
-                errorMessageHandler.showErrorMsg("The invalid registred was not found in the database!");
+                errorMessageHandler.showErrorMsg("The item registred was not found in the database!");
             }
             catch (OperationFailedException opFail) {
                 errorMessageHandler.showErrorMsg("item registraiton failed. Please try agin!\n" +
