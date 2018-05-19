@@ -52,6 +52,8 @@ public class Controller {
     /**
      * Metoden används för att slå in itemId
      * @param id items id
+     * @throws InvalidItemException undantag som kastas om varan inte hittades.
+     * @throws OperationFailedException undantag som kastas när operationene mislykas p.g.a. fel vid exekveringen.
      * @return returnerar det item för försäljning
      */
     public SaleInfoDto enterItemId(int id)throws InvalidItemException, OperationFailedException

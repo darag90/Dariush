@@ -24,7 +24,6 @@ kommer varoran vara inlagda som Item objekt från början.
 
     public InventorySystem()
     {
-
         this.itemsInInventory.put( 1234, new Item(1234,20,"Gurka ekologisk") );
         this.itemsInInventory.put( 5678, new Item(1234,40,"Banan ica basic") );
         this.itemsInInventory.put( 1357, new Item(1234,60,"tandkräm oral-b") );
@@ -33,6 +32,8 @@ kommer varoran vara inlagda som Item objekt från början.
     /**
      * en metod för att hämta information om varorna
      * @param id items id
+     * @throws InvalidItemException undantag som kastas om varan inte hittades.
+     * @throws DatabaseErrorException undantag som kastas om det blir ett fel med databasen
      * @return returnera varans id
      */
     public Item getItem (int id)throws InvalidItemException, DatabaseErrorException
@@ -58,7 +59,9 @@ kommer varoran vara inlagda som Item objekt från början.
     /**
      * Metoden tar en item som ett argument och kontrollerar om varan finns registerad
      * @param number tillgänglig nummer
-     * @throws InvalidItemException undantag
+     * @throws InvalidItemException undantag som kastas om varan inte hittades.
+     * @throws DatabaseErrorException undantag som kastas om det blir ett fel med databasen
+     * @return returnerar om varan finns i systemet eller inte
      */
 
     public Item matchItemId (int number) throws InvalidItemException, DatabaseErrorException

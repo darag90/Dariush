@@ -30,6 +30,8 @@ public class ExternalSystem {
     /**
      * Denna metod tar items id
      * @param id id för items
+     * @throws InvalidItemException undantag som kastas om varan inte hittades.
+     * @throws DatabaseErrorException undantag som kastas om det blir ett fel med databasen
      * @return reurnerar det bestämda item id
      */
 
