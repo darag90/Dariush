@@ -1,8 +1,11 @@
-2018/05/17 14:34:14, Exception was thrown: Database exception:  2222
-se.kth.iv1201.pos.dbhandler.DatabaseErrorException: Database exception:  2222
+2018/05/19 11:22:39, Exception was thrown: Registraition of the following item failed: 2222
+se.kth.iv1201.pos.controller.OperationFailedException: Registraition of the following item failed: 2222
+	at se.kth.iv1201.pos.controller.Controller.enterItemId(Controller.java:70)
+	at se.kth.iv1201.pos.view.View.sampleExecution(View.java:75)
+	at se.kth.iv1201.pos.startup.Main.main(Main.java:39)
+Caused by: se.kth.iv1201.pos.dbhandler.DatabaseErrorException: Database exception:  2222
 	at se.kth.iv1201.pos.dbhandler.InventorySystem.matchItemId(InventorySystem.java:68)
 	at se.kth.iv1201.pos.dbhandler.InventorySystem.getItem(InventorySystem.java:40)
 	at se.kth.iv1201.pos.dbhandler.ExternalSystem.getItem(ExternalSystem.java:37)
-	at se.kth.iv1201.pos.controller.Controller.enterItemId(Controller.java:60)
-	at se.kth.iv1201.pos.view.View.sampleExecution(View.java:72)
-	at se.kth.iv1201.pos.startup.Main.main(Main.java:37)
+	at se.kth.iv1201.pos.controller.Controller.enterItemId(Controller.java:61)
+	... 2 more
