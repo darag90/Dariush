@@ -68,8 +68,6 @@ kommer varoran vara inlagda som Item objekt från början.
             throw new DatabaseErrorException(number);
         else if (!(match))
             throw new  InvalidItemException(number);
-        else if(number == 2222)
-            throw new DatabaseErrorException(number);
         else
             return itemsInInventory.get(number);
     }

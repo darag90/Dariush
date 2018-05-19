@@ -17,7 +17,7 @@ public class Printer {
      * Skriver ut själv kvittot.
      * @param reciept ett object av typen <code>recipe</code> inehållandes all information som skall finnas på kvittot.
      */
-    public void printReciept (Reciept reciept){
+    void printReciept (Reciept reciept){
         String stringprint = reciept.getSBToString();
         double cost = reciept.getCost();
 

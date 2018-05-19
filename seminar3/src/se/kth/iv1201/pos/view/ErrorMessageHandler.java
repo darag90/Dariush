@@ -20,5 +20,6 @@ public class ErrorMessageHandler extends  ErrorHandlerBase
         errorMsgBuilder.append(", ERROR: ");
         errorMsgBuilder.append(msg);
         System.out.println(errorMsgBuilder);
+        System.out.println();
     }
 }

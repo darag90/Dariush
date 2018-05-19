@@ -1,6 +1,6 @@
 package se.kth.iv1201.pos.dbhandler;
 
-public class DatabaseErrorException extends Exception
+public class DatabaseErrorException extends RuntimeException
 {
     public DatabaseErrorException(int DatabaseInfo)
     {

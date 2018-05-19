@@ -11,11 +11,11 @@ package se.kth.iv1201.pos.model;
 public class Item {
 
     /**id number for the item*/
-    private int idNumber;//streckkod
+    private final int idNumber;//streckkod
     /**this represtns the name of an item*/
-    private String itemName;//namn
+    private final String itemName;//namn
     private int itemQuantity;
-    private int itemCost;
+    private final int itemCost;
 
     /**
      *This construcor creates a new <code>Item</code>. The id, cost/price and name of item should be specified.

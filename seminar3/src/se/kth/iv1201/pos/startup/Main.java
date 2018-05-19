@@ -5,6 +5,7 @@ import se.kth.iv1201.pos.controller.Controller;
 import se.kth.iv1201.pos.dbhandler.ExternalSystem;
 import se.kth.iv1201.pos.model.PaymentController;
 import se.kth.iv1201.pos.model.Printer;
+import se.kth.iv1201.pos.view.TotalRevenueView;
 import se.kth.iv1201.pos.view.View;
 import se.kth.iv1201.pos.view.ErrorMessageHandler;
 import se.kth.iv1201.pos.view.LogHandler;
@@ -31,12 +32,16 @@ public class Main
         try
         {
             LogHandler logHandler = new LogHandler();
+
             View view = new View(contr, errorMessageHandler, logHandler);
 
             /*starta exempel exikveringen av programmet*/
             view.sampleExecution();
+
         }
-       catch (Exception e){}
+       catch (Exception e){
+            System.out.println("error with logHandler");
+       }
     }
 }
 

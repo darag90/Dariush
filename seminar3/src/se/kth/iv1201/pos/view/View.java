@@ -3,6 +3,7 @@ package se.kth.iv1201.pos.view;
 
 import com.sun.jmx.snmp.EnumRowStatus;
 import se.kth.iv1201.pos.controller.Controller;
+import se.kth.iv1201.pos.controller.OperationFailedException;
 import se.kth.iv1201.pos.dbhandler.DatabaseErrorException;
 import se.kth.iv1201.pos.dbhandler.InvalidItemException;
 import se.kth.iv1201.pos.dbhandler.InventorySystem;
@@ -45,49 +46,63 @@ public class View {
 
         //Starta försäljningen
         contr.startSale();
-
+        contr.addRentalObserver(new TotalRevenueView());
         //Skapa tre st nya id:n som egentligen skulle slagits in av kassören
-        int itemIdGurka = 1234;
-        int itemIdBanan = 5678;
-        int itemIdTandkräm = 1357;
-        Integer itemGodis = 0000;// denna är en item som inte har sitt id registerad
-        int itemThatCousesDataBaseException = 2222;// en vara som åstakommer ett database exception
+//        int itemIdGurka = 1234;
+//        int itemIdBanan = 5678;
+//        int itemIdTandkräm = 1357;
+//        Integer itemGodis = 0000;// denna är en item som inte har sitt id registerad
+//        int itemThatCousesDataBaseException = 2222;// en vara som åstakommer ett database exception
 
         //lägg till displayen som en observatör
 
-        contr.addRentalObserver(new TotalRevenueView());
+
         //lägg till tre varor i försälningen
 
 
-        try
-        {
-            saleInfo = contr.enterItemId(itemIdBanan);
-            printInfoDisplay(saleInfo);
-            saleInfo = contr.enterItemId(itemIdGurka);
-            printInfoDisplay(saleInfo);
-            saleInfo = contr.enterItemId(itemIdTandkräm);
-            printInfoDisplay(saleInfo);
-            //saleInfo = contr.enterItemId();
-            //printInfoDisplay(saleInfo);
-            saleInfo = contr.enterItemId(itemThatCousesDataBaseException);
-            printInfoDisplay(saleInfo);
-            String item = contr.getItemId(itemGodis);
-            System.out.println("Search item id: " + item);
+        /*Skapa tre st nya id:n som egentligen skulle slagits in av kassören
+        * itemIdGurka = 1234;
+        * itemIdBanan = 5678;
+        * itemIdTandkräm = 1357;
+        * itemGodis = 0000;// denna är en item som inte har sitt id registerad
+        * itemThatCousesDataBaseException = 2222;// en vara som åstakommer ett database exception
+        * */
 
-        }
-        catch (InvalidItemException invalItem)
-        {
-            errorMessageHandler.showErrorMsg(invalItem.getMessage());
-            logHandler.logException(invalItem);
+        int[] items ={1234,5678,1357,0000,2222};
 
+        for(int item : items) {
+            try {
+                saleInfo = contr.enterItemId(item);
+                printInfoDisplay(saleInfo);
+            }
+            catch (InvalidItemException invalItem) {
+                errorMessageHandler.showErrorMsg("The item registred was not found in the database!");
+            }
+            catch (OperationFailedException opFail) {
+                errorMessageHandler.showErrorMsg("item registraiton failed. Please try agin!\n" +
+                        " If the problem is not resolved contact the system administrator!");
+                logHandler.logException(opFail);
+            }
         }
-        catch (DatabaseErrorException dataBase)
-        {
-            errorMessageHandler.showErrorMsg("Database exception");
-            logHandler.logException(dataBase);
-        }
+//        saleInfo = contr.enterItemId(itemIdBanan);
+//        printInfoDisplay(saleInfo);
+//        saleInfo = contr.enterItemId(itemIdGurka);
+//        printInfoDisplay(saleInfo);
+//        saleInfo = contr.enterItemId(itemIdTandkräm);
+//        printInfoDisplay(saleInfo);
 
-        
+
+
+        // print out off search item id
+//        try {
+//            String item = contr.getItemId(itemGodis);
+//            System.out.println("Search item id: " + item);
+//        }
+//        catch (InvalidItemException invalItem){
+//            errorMessageHandler.showErrorMsg(invalItem.getMessage());
+//        }
+
+
 
         //slutför försäljningen
         SaleInfoDto saleInfoRegistrationDone = contr.endSale();

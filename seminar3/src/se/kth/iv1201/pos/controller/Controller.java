@@ -54,15 +54,21 @@ public class Controller {
      * @param id items id
      * @return returnerar det item för försäljning
      */
-    public SaleInfoDto enterItemId(int id)throws InvalidItemException, DatabaseErrorException
+    public SaleInfoDto enterItemId(int id)throws InvalidItemException, OperationFailedException
     {
-
-       Item item = externalSystem.getItem(id);
-        if(item != null)
+        try
         {
-            sale.addItem(item);
+            Item item = externalSystem.getItem(id);
+            if(item != null)
+            {
+                sale.addItem(item);
+            }
+            return sale.getSale();
         }
-        return sale.getSale();
+        catch (DatabaseErrorException databaseErrorException)
+        {
+            throw new OperationFailedException("Registraition of the following item failed: " + id,databaseErrorException);
+        }
     }
 
 
@@ -104,13 +110,23 @@ public class Controller {
     }
 
 
-    public String getItemId(int id) throws InvalidItemException, DatabaseErrorException{
+    public String getItemId(int id) throws InvalidItemException, OperationFailedException
+    {
 
        // this.itemId = new ItemId();
       //  return itemId.matchItemId(id);
-        this.inventorySystem = new InventorySystem();
-        return inventorySystem.matchItemId(id).getItemName();
+        try
+        {
+            this.inventorySystem = new InventorySystem();
+            return inventorySystem.matchItemId(id).getItemName();
+        }
+        catch (DatabaseErrorException databaseErrorException)
+        {
+            throw new OperationFailedException("Registraition of the following item failed: " + id,databaseErrorException);
+        }
     }
+
+
 
 
     /**
