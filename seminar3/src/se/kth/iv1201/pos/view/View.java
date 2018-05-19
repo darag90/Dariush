@@ -3,6 +3,7 @@ package se.kth.iv1201.pos.view;
 
 import com.sun.jmx.snmp.EnumRowStatus;
 import se.kth.iv1201.pos.controller.Controller;
+import se.kth.iv1201.pos.dbhandler.DatabaseErrorException;
 import se.kth.iv1201.pos.dbhandler.InvalidItemException;
 import se.kth.iv1201.pos.dbhandler.InventorySystem;
 import se.kth.iv1201.pos.dto.SaleInfoDto;
@@ -22,15 +23,17 @@ public class View {
     private SaleInfoDto saleInfo;
     private InventorySystem inventorySystem;
     private ErrorMessageHandler errorMessageHandler;
+    private LogHandler logHandler;
 
 
     /**
      * Skapar en ny instans
      * @param contr används för opperationer
      */
-    public View(Controller contr, ErrorMessageHandler errorMsg) {
+    public View(Controller contr, ErrorMessageHandler errorMsg, LogHandler logHandler) {
         this.contr = contr;
         this.errorMessageHandler = errorMsg;
+        this.logHandler = logHandler;
     }
 
     /**
@@ -47,7 +50,8 @@ public class View {
         int itemIdGurka = 1234;
         int itemIdBanan = 5678;
         int itemIdTandkräm = 1357;
-        Integer itemGodis = 0000;  /** denna är en item som inte har sitt id registerad */
+        Integer itemGodis = 0000;// denna är en item som inte har sitt id registerad
+        int itemThatCousesDataBaseException = 2222;// en vara som åstakommer ett database exception
 
         //lägg till displayen som en observatör
 
@@ -63,6 +67,42 @@ public class View {
             printInfoDisplay(saleInfo);
             saleInfo = contr.enterItemId(itemIdTandkräm);
             printInfoDisplay(saleInfo);
+            //saleInfo = contr.enterItemId();
+            //printInfoDisplay(saleInfo);
+            saleInfo = contr.enterItemId(itemThatCousesDataBaseException);
+            printInfoDisplay(saleInfo);
+
+
+
+        }
+        catch (InvalidItemException invalItem)
+        {
+            errorMessageHandler.showErrorMsg(invalItem.getMessage());
+            logHandler.logException(invalItem);
+
+        }
+        catch (DatabaseErrorException dataBase)
+        {
+            errorMessageHandler.showErrorMsg("Database exception");
+            logHandler.logException(dataBase);
+        }
+//        saleInfo = contr.enterItemId(itemIdBanan);
+//        printInfoDisplay(saleInfo);
+//        saleInfo = contr.enterItemId(itemIdGurka);
+//        printInfoDisplay(saleInfo);
+//        saleInfo = contr.enterItemId(itemIdTandkräm);
+//        printInfoDisplay(saleInfo);
+
+
+
+        // print out off search item id
+//        try {
+//            String item = contr.getItemId(itemGodis);
+//            System.out.println("Search item id: " + item);
+//        }
+//        catch (InvalidItemException invalItem){
+//            errorMessageHandler.showErrorMsg(invalItem.getMessage());
+//        }
             String item = contr.getItemId(itemGodis);
             System.out.println("Search item id: " + item);
 

@@ -7,6 +7,7 @@ import se.kth.iv1201.pos.model.PaymentController;
 import se.kth.iv1201.pos.model.Printer;
 import se.kth.iv1201.pos.view.View;
 import se.kth.iv1201.pos.view.ErrorMessageHandler;
+import se.kth.iv1201.pos.view.LogHandler;
 
 /**
  * Main start programmet.
@@ -27,10 +28,15 @@ public class Main
         ExternalSystem externalSystem = new ExternalSystem(printer);
         Controller contr = new Controller(externalSystem, paymentController);
         ErrorMessageHandler errorMessageHandler = new ErrorMessageHandler();
-        View view = new View(contr, errorMessageHandler);
+        try
+        {
+            LogHandler logHandler = new LogHandler();
+            View view = new View(contr, errorMessageHandler, logHandler);
 
-        /*starta exempel exikveringen av programmet*/
-        view.sampleExecution();
+            /*starta exempel exikveringen av programmet*/
+            view.sampleExecution();
+        }
+       catch (Exception e){}
     }
 }
 

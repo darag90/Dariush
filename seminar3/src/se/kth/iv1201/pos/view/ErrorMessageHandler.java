@@ -6,12 +6,12 @@ import java.util.Date;
 import java.util.Calendar;
 import java.time.LocalTime;
 
-public class ErrorMessageHandler
+public class ErrorMessageHandler extends  ErrorHandlerBase
 {
     /**
-    * Displays the specified error message.
-    *
-    * @param msg The error message.
+     * Displays the specified error message.
+     *
+     * @param msg The error message.
      */
     void showErrorMsg(String msg)
     {
@@ -21,18 +21,4 @@ public class ErrorMessageHandler
         errorMsgBuilder.append(msg);
         System.out.println(errorMsgBuilder);
     }
-
-    private String createTime()
-    {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        Date date = new Date();
-        return dateFormat.format(date);
-    }
-
-
-
-
-
-
-
 }

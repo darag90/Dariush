@@ -15,5 +15,4 @@ public class TotalRevenueView implements Observer {
 
 
 
-
 }

@@ -4,6 +4,6 @@ public class DatabaseErrorException extends Exception
 {
     public DatabaseErrorException(int DatabaseInfo)
     {
-        super("This item with the specified identifier is not found: " + DatabaseInfo);
+        super("Database exception:  " + DatabaseInfo);
     }
 }

@@ -54,7 +54,7 @@ public class Controller {
      * @param id items id
      * @return returnerar det item för försäljning
      */
-    public SaleInfoDto enterItemId(int id)throws InvalidItemException
+    public SaleInfoDto enterItemId(int id)throws InvalidItemException, DatabaseErrorException
     {
 
        Item item = externalSystem.getItem(id);
@@ -104,15 +104,13 @@ public class Controller {
     }
 
 
-    public String getItemId(int id) throws InvalidItemException{
+    public String getItemId(int id) throws InvalidItemException, DatabaseErrorException{
 
        // this.itemId = new ItemId();
       //  return itemId.matchItemId(id);
         this.inventorySystem = new InventorySystem();
         return inventorySystem.matchItemId(id).getItemName();
     }
-
-
 
 
     /**
