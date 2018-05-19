@@ -76,7 +76,7 @@ public class View {
                 printInfoDisplay(saleInfo);
             }
             catch (InvalidItemException invalItem) {
-                errorMessageHandler.showErrorMsg("The item registred was not found in the database!");
+                errorMessageHandler.showErrorMsg("The item registred was not found in the inventory system!");
             }
             catch (OperationFailedException opFail) {
                 errorMessageHandler.showErrorMsg("item registraiton failed. Please try agin!\n" +
