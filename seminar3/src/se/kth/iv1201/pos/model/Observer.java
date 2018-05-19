@@ -7,7 +7,7 @@ public interface Observer
 {
     /**
      * det kommer att kalla på sale när en försäljning sker
-     * @param sale när en försäljning genomförs
+     * @param totalCost när en försäljning genomförs
      */
     void notify(int totalCost);
 }

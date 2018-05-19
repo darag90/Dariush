@@ -4,22 +4,13 @@ import se.kth.iv1201.pos.dto.SaleInfoDto;
 import se.kth.iv1201.pos.model.Observer;
 
 public class TotalRevenueView implements Observer {
-    private int toatalCost = 0;
+    private int totalCost = 0;
 
-    public void notify(int toatalCost)
+    public void notify(int totalCost)
     {
-        this.toatalCost += toatalCost;
-        System.out.println("Display: " + toatalCost);
+        this.totalCost += totalCost;
+        System.out.println("Display: " + totalCost);
     }
-
-
-
-
-
-
-
-
-
 
 
 
