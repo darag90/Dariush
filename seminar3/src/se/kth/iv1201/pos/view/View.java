@@ -71,8 +71,8 @@ public class View {
             //printInfoDisplay(saleInfo);
             saleInfo = contr.enterItemId(itemThatCousesDataBaseException);
             printInfoDisplay(saleInfo);
-
-
+            String item = contr.getItemId(itemGodis);
+            System.out.println("Search item id: " + item);
 
         }
         catch (InvalidItemException invalItem)
@@ -86,32 +86,8 @@ public class View {
             errorMessageHandler.showErrorMsg("Database exception");
             logHandler.logException(dataBase);
         }
-//        saleInfo = contr.enterItemId(itemIdBanan);
-//        printInfoDisplay(saleInfo);
-//        saleInfo = contr.enterItemId(itemIdGurka);
-//        printInfoDisplay(saleInfo);
-//        saleInfo = contr.enterItemId(itemIdTandkräm);
-//        printInfoDisplay(saleInfo);
 
-
-
-        // print out off search item id
-//        try {
-//            String item = contr.getItemId(itemGodis);
-//            System.out.println("Search item id: " + item);
-//        }
-//        catch (InvalidItemException invalItem){
-//            errorMessageHandler.showErrorMsg(invalItem.getMessage());
-//        }
-            String item = contr.getItemId(itemGodis);
-            System.out.println("Search item id: " + item);
-
-        }
-        catch (InvalidItemException invalItem)
-        {
-            errorMessageHandler.showErrorMsg(invalItem.getMessage());
-        }
-
+        
 
         //slutför försäljningen
         SaleInfoDto saleInfoRegistrationDone = contr.endSale();
