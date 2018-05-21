@@ -9,10 +9,6 @@ public class TotalRevenueView implements Observer {
     public void notify(int totalCost)
     {
         this.totalCost += totalCost;
-        System.out.println("Display: " + totalCost);
+        System.out.println("Display: " + this.totalCost);
     }
-
-
-
-
 }

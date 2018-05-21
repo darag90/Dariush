@@ -29,6 +29,7 @@ public class Main
         ExternalSystem externalSystem = new ExternalSystem(printer);
         Controller contr = new Controller(externalSystem, paymentController);
         ErrorMessageHandler errorMessageHandler = new ErrorMessageHandler();
+        TotalRevenueView totalRevenueView = new TotalRevenueView();
         try
         {
             LogHandler logHandler = new LogHandler();
@@ -36,7 +37,8 @@ public class Main
             View view = new View(contr, errorMessageHandler, logHandler);
 
             /*starta exempel exikveringen av programmet*/
-            view.sampleExecution();
+            view.sampleExecution(totalRevenueView);
+            view.sampleExecution(totalRevenueView);
 
         }
        catch (Exception e){

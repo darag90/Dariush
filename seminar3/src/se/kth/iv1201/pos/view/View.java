@@ -41,24 +41,17 @@ public class View {
      * Denna metod simulerar ett exempel på en försäljning igentligen borde ett riktigt gui finnas här.
      * med enkla ord, detta utför prov
      */
-    public void sampleExecution()
+    public void sampleExecution(TotalRevenueView totalRevenueView)
     {
 
         //Starta försäljningen
         contr.startSale();
-        contr.addRentalObserver(new TotalRevenueView());
-        //Skapa tre st nya id:n som egentligen skulle slagits in av kassören
-//        int itemIdGurka = 1234;
-//        int itemIdBanan = 5678;
-//        int itemIdTandkräm = 1357;
-//        Integer itemGodis = 0000;// denna är en item som inte har sitt id registerad
-//        int itemThatCousesDataBaseException = 2222;// en vara som åstakommer ett database exception
 
         //lägg till displayen som en observatör
+        contr.addRentalObserver(totalRevenueView);
 
 
         //lägg till tre varor i försälningen
-
 
         /*Skapa tre st nya id:n som egentligen skulle slagits in av kassören
         * itemIdGurka = 1234;
@@ -84,26 +77,7 @@ public class View {
                 logHandler.logException(opFail);
             }
         }
-//        saleInfo = contr.enterItemId(itemIdBanan);
-//        printInfoDisplay(saleInfo);
-//        saleInfo = contr.enterItemId(itemIdGurka);
-//        printInfoDisplay(saleInfo);
-//        saleInfo = contr.enterItemId(itemIdTandkräm);
-//        printInfoDisplay(saleInfo);
-
-
-
-        // print out off search item id
-//        try {
-//            String item = contr.getItemId(itemGodis);
-//            System.out.println("Search item id: " + item);
-//        }
-//        catch (InvalidItemException invalItem){
-//            errorMessageHandler.showErrorMsg(invalItem.getMessage());
-//        }
-
-
-
+        
         //slutför försäljningen
         SaleInfoDto saleInfoRegistrationDone = contr.endSale();
         printInfoDisplayTotal(saleInfoRegistrationDone);
